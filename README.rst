@@ -23,25 +23,24 @@ This code has been run and tested on Python 2.7.
 Dependencies
 ============
  
-* Django 1.5
-* See ``requirement.txt``
+* Python 2.7
 
 Installation
 ************
  
-# Install requirements:
+#. Install requirements:
 
-  In development::
+   In development::
 
-    $ pip -e requirements/local.txt
+     $ pip -e requirements/local.txt
+     
+   For production::
 
-  For production::
-
-    $ pip -e requirement.txt
+     $ pip -e requirement.txt
  
-# Run Web Server::
+#. Run Web Server::
  
-  $ python manage.py runserver
+   $ python manage.py runserver
 
 Tests 
 *****
