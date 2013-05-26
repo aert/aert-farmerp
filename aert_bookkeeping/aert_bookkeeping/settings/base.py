@@ -189,6 +189,10 @@ DJANGO_APPS = (
     # Admin panel and documentation:
     'django.contrib.admin',
     # 'django.contrib.admindocs',
+    # aert: my apps:
+    'aert_bookkeeping_projects',
+    'aert_bookkeeping_transactions',
+    'aert_bookkeeping_inventory',
 )
 
 THIRD_PARTY_APPS = (
