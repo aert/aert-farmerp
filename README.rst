@@ -32,11 +32,11 @@ Installation
 
    In development::
 
-     $ pip -e requirements/local.txt
+     $ pip install -r requirements/local.txt
      
    For production::
 
-     $ pip -e requirement.txt
+     $ pip install -r requirement.txt
  
 #. Run Web Server::
  
