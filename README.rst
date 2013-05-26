@@ -29,13 +29,19 @@ Dependencies
 Installation
 ************
  
-Install requirements::
+# Install requirements:
+
+  In development::
+
+    $ pip -e requirements/local.txt
+
+  For production::
+
+    $ pip -e requirement.txt
  
-  pip -e requirement.txt
+# Run Web Server::
  
-Start using::
- 
-  python manage.py runserver
+  $ python manage.py runserver
 
 Tests 
 *****
