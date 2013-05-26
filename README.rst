@@ -5,6 +5,7 @@ Introduction
 ************
  
 This is my accounting software for farming projects.
+
 It's based on FAO guidelines : www.fao.org/docrep/field/003/AB619F/AB619F00.htm
 
 Notable features :
