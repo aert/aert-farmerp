@@ -8,7 +8,7 @@ from django.utils.encoding import python_2_unicode_compatible
 from ._common_ import *
 
 
-class RightManager(models.Manager):
+class UserRightManager(models.Manager):
    def add_right(right):
       pass
 
@@ -17,19 +17,19 @@ class RightManager(models.Manager):
 
 
 @python_2_unicode_compatible
-class Right(models.Model):
+class UserRight(models.Model):
    code = models.CharField(_('code'), max_length=100)
    name = models.CharField(_('name'), max_length=100)
    description = models.TextField(_('description'), blank=True)
    is_builtin = models.BooleanField(_('is builtin'), default=False)
    is_admin = models.BooleanField(_('is admin'), default=False)
 
-   objects = RightManager()
+   objects = UserRightManager()
 
    class Meta:
       app_label = APP_LABEL
-      verbose_name = _('right')
-      verbose_name_plural = _('rights')
+      verbose_name = _('user right')
+      verbose_name_plural = _('user rights')
       
    def __str__(self):
       return smart_text(self.name)
