@@ -7,9 +7,6 @@ from django.utils.encoding import smart_text
 from django.utils.encoding import python_2_unicode_compatible
 from ._common_ import *
 
-DEBIT = 0
-CREDIT = 1
-
 
 class CreditBookTransactionManager(models.Manager):
    def add_transaction(credit_book_transaction, is_refund_complete):
