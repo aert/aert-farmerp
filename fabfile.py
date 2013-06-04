@@ -5,19 +5,17 @@ SETTINGS_FORMAT = 'aert_bookkeeping_site.settings.{}'
 
 @task
 def runserver(env="local"):
-    settings=SETTINGS_FORMAT.format(env)
-    local('django-admin.py runserver --settings={}'\
-          .format(settings))
+    run_admin('runserver', env)
 
 @task
 def syncdb(env="local"):
-    settings=SETTINGS_FORMAT.format(env)
-    local('django-admin.py syncdb --settings={}'\
-          .format(settings))
+    run_admin('syncdb', env)
 
 @task
 def validate(env="local"):
-    settings=SETTINGS_FORMAT.format(env)
-    local('django-admin.py validate --settings={}'\
-          .format(settings))
+    run_admin('validate', env)
 
+def run_admin(cmd, env):
+    settings=SETTINGS_FORMAT.format(env)
+    local('django-admin.py {} --settings={}'\
+          .format(cmd, settings))
