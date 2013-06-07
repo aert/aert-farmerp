@@ -1,1 +1,6 @@
 /*! project specific CSS goes here. */
+@import "bootstrap-select.min.css";
+
+.bootstrap-select.btn-group, .bootstrap-select.btn-group[class*="span"] {
+    margin-bottom: 0px;
+}
