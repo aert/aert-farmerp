@@ -1,4 +1,6 @@
 {% load staticfiles %}
+{% load compress %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,7 +26,9 @@
     <![endif]-->
 
     <!-- This file store project specific CSS -->
+    {% compress css %}
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
+    {% endcompress %}
 
     <!-- Use this to quickly test CSS changes in a template,
         then move to project.css -->

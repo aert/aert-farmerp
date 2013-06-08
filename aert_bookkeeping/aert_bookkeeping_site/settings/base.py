@@ -102,6 +102,8 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
 )
 ########## END STATIC FILE CONFIGURATION
 
@@ -200,6 +202,7 @@ THIRD_PARTY_APPS = (
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
+    'compressor',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
