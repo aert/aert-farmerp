@@ -28,17 +28,17 @@ Dependencies
 Installation
 ************
  
-#. Install requirements:
+* In development::
 
-   In development::
-
+     $ cdproject
      $ pip install -r requirements/local.txt
+     $ add2virtualenv `pwd`
      
-   For production::
+* For production::
 
      $ pip install -r requirement.txt
  
-#. Run Web Server::
+* Run Web Server::
  
    $ python manage.py runserver
 
