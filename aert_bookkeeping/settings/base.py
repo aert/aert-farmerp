@@ -7,8 +7,7 @@ from sys import path
 
 ########## PATH CONFIGURATION
 # Absolute filesystem path to the Django project directory:
-#DJANGO_ROOT = dirname(dirname(abspath(__file__)))
-DJANGO_ROOT = dirname(abspath(__file__))
+DJANGO_ROOT = dirname(dirname(abspath(__file__)))
 
 # Absolute filesystem path to the top-level project folder:
 SITE_ROOT = dirname(DJANGO_ROOT)
