@@ -192,7 +192,7 @@ DJANGO_APPS = (
     'django.contrib.admin',
     # 'django.contrib.admindocs',
     # aert: my apps:
-    'aert_bookkeeping',
+    'aert_base',
 )
 
 THIRD_PARTY_APPS = (
