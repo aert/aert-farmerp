@@ -6,6 +6,8 @@ from os.path import join, normpath
 from base import *
 
 
+#COMPRESS_ENABLED = True
+
 ########## DEBUG CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = True
