@@ -33,6 +33,9 @@ Installation
      $ cdproject
      $ pip install -r requirements/local.txt
      $ add2virtualenv `pwd`
+
+     $ sudo npm install -g less
+     $ sudo npm install -g coffee-script
      
 * For production::
 
