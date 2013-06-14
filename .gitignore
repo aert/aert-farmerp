@@ -20,3 +20,4 @@ build
 # Others:
 .idea
 .vagrant
+wheel
