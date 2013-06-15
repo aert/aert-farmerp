@@ -2,13 +2,13 @@ base:
   '*':
     - requirements.essential
     - ssh
-#  'vagrant.django-salted.org':
-#    - example-project.requirements
-#    - example-project.nginx
-#    - example-project.share
-#    - example-project.venv
-#    - example-project.pip
-#    - example-project.wheel
-#    - example-project.uwsgi
-#    - example-project.postgresql
+  'vagrant.aert-bookkeeping.org':
+#    - aert_bookkeeping.requirements
+#    - aert_bookkeeping.nginx
+#    - aert_bookkeeping.share
+#    - aert_bookkeeping.venv
+#    - aert_bookkeeping.pip
+#    - aert_bookkeeping.wheel
+#    - aert_bookkeeping.uwsgi
+    - aert_bookkeeping.postgresql
 

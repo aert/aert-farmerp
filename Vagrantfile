@@ -10,6 +10,7 @@ Vagrant.configure("2") do |config|
     # Network
     web.vm.hostname = "vagrant.aert-bookkeeping.org"
     web.vm.network :forwarded_port, guest: 80, host: 8080, auto_correct: true
+    web.vm.network :forwarded_port, guest: 5432, host: 5432
 
     # Share for masterless server
     web.vm.synced_folder "salt/roots/", "/srv/"

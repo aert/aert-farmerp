@@ -30,6 +30,7 @@ Installation
  
 * In development::
 
+     $ sudo apt-get install libpq-dev
      $ cdproject
      $ pip install -r requirements/local.txt
      $ add2virtualenv `pwd`

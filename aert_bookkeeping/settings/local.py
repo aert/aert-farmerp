@@ -27,12 +27,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': normpath(join(SITE_ROOT,'db', 'default.db')),
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'aert_bookkeeping',
+        'USER': 'bookkeeping',
+        'PASSWORD': 'bookkeepingPwd3',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 ########## END DATABASE CONFIGURATION
