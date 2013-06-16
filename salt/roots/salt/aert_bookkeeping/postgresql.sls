@@ -1,11 +1,6 @@
 include:
   - postgresql
 
-psycopg2-requirements:
-  pkg.installed:
-    - pkgs:
-      - libpq-dev
-
 bookkeeping-postgres-user:
   postgres_user.present:
     - name: {{ pillar['postgresql']['user'] }}

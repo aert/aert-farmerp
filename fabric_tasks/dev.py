@@ -1,4 +1,4 @@
-from os import path
+from os.path import dirname, realpath, join
 import hashlib
 
 from fabric.api import *
@@ -6,14 +6,14 @@ from fabric import colors
 
 
 # Local paths
-LOCAL_ROOT = path.dirname(path.dirname(path.realpath(__file__)))
+LOCAL_ROOT = dirname(dirname(realpath(__file__)))
 VENV_PATH = "/home/ari/Dev/Envs/aert-bookkeeping"
 
 
 # Server paths
 PROJECT_NAME = "aert_bookkeeping"
 
-WHEEL_PATH = path.join(LOCAL_ROOT, "wheel")
+WHEEL_PATH = join(LOCAL_ROOT, "wheel")
 WHEEL_NAME = "wheel-requirements.tar.gz"
 
 # Other
@@ -36,7 +36,7 @@ def _md5_for_file(filename, block_size=2 ** 20):
 @task
 def make_wheel(env='staging'):
     """ Create new wheel requirements file """
-    require_path = path.join(LOCAL_ROOT,
+    require_path = join(LOCAL_ROOT,
                              REQUIRE_FORMAT.format(env))
 
     with prefix('. {}/bin/activate'.format(VENV_PATH)):

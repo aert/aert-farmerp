@@ -1,6 +1,6 @@
 django:
-  path: /vagrant/aert_bookkeeping
-  settings: aert_bookkeeping.settings.production
-  virtualenv: /home/vagrant/env
-  user: vagrant
-  group: vagrant
+  path: /www/aert_bookkeeping/site
+  settings: aert_bookkeeping.settings.staging
+  virtualenv: /www/aert_bookkeeping/env
+  user: www-data
+  group: www-data
