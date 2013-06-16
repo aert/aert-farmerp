@@ -1,3 +1,5 @@
+include:
+  - aert_bookkeeping.requirements
 
 # Create the Python Virtual environment
 {{ pillar['django']['virtualenv'] }}:
@@ -6,6 +8,4 @@
     - distribute: True
     - runas: {{ pillar['django']['user'] }}
     - require:
-      - pkg: python-virtualenv
-      - pkg: python-dev
-      - pkg: libpq-dev
+      - pkg: bookkeeping-packages

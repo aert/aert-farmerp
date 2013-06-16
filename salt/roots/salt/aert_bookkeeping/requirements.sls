@@ -1,4 +1,6 @@
 bookkeeping-packages:
   pkg.installed:
     - names:
-      - git
+      - python-virtualenv
+      - python-dev
+      - libpq-dev

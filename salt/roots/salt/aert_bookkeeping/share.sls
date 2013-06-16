@@ -1,5 +1,6 @@
 
-{{ pillar['django']['path'] }}::
+{{ pillar['django']['path'] }}:
   file.directory:
-    - user: www-data
+    - user: {{ pillar['django']['user'] }}
+    - group: {{ pillar['django']['group'] }}
     - makedirs: True
