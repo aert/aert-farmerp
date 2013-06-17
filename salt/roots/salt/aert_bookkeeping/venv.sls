@@ -1,5 +1,6 @@
 include:
   - aert_bookkeeping.requirements
+  - aert_bookkeeping.share
 
 # Create the Python Virtual environment
 {{ pillar['django']['virtualenv'] }}:
@@ -9,3 +10,6 @@ include:
     - runas: {{ pillar['django']['user'] }}
     - require:
       - pkg: bookkeeping-packages
+      - file: {{ pillar['django']['path'] }}
+      - git: webapp
+

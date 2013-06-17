@@ -13,6 +13,7 @@ webapp:
     - name: {{ pillar['django']['git_repo'] }}
     - rev: {{ pillar['django']['git_rev'] }}
     - target: {{ pillar['django']['path'] }}
+    - runas: {{ pillar['django']['user'] }}
     - force: true
     - require:
       - pkg: bookkeeping-packages

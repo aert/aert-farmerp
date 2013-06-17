@@ -23,7 +23,7 @@ extract-wheel:
       - file: {{ pillar['wheel']['path'] }}
 
 # Install all the requirements
-example-wheel:
+bookkeeping-wheel:
   cmd.wait:
     - name: {{ pillar['django']['virtualenv'] }}/bin/pip install --use-wheel --no-index --find-links={{ pillar['wheel']['path'] }}/aert_bookkeeping -r {{ pillar['django']['requirements'] }}
     - require:
