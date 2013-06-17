@@ -21,3 +21,4 @@ build
 .idea
 .vagrant
 wheel
+salt/roots/salt/aert_bookkeeping/wheel-requirements.tar.gz

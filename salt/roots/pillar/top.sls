@@ -1,6 +1,6 @@
 base:
   'vagrant.aert-bookkeeping.org':
     - vagrant-django
-#    - vagrant-wheel
+    - vagrant-wheel
 #    - vagrant-uwsgi
     - vagrant-postgresql

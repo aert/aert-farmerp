@@ -14,6 +14,8 @@ VENV_PATH = "/home/ari/Dev/Envs/aert-bookkeeping"
 PROJECT_NAME = "aert_bookkeeping"
 
 WHEEL_PATH = join(LOCAL_ROOT, "wheel")
+WHEEL_PATH_DEPLOY = join(LOCAL_ROOT, "salt", "roots",
+        "salt", "aert_bookkeeping")
 WHEEL_NAME = "wheel-requirements.tar.gz"
 
 # Other
@@ -50,8 +52,10 @@ def make_wheel(env='staging'):
     with lcd(WHEEL_PATH):
         local('tar czf {name} {project}/'.format(name=WHEEL_NAME,
                                                  project=PROJECT_NAME))
+        local('mv {name} {salt_path}/{name}'.format(name=WHEEL_NAME,
+                                                 salt_path=WHEEL_PATH_DEPLOY))
 
     # Create a MD5
-    md5 = _md5_for_file(WHEEL_PATH + '/' + WHEEL_NAME)
+    md5 = _md5_for_file(WHEEL_PATH_DEPLOY + '/' + WHEEL_NAME)
     print colors.green(
         'Upload the requirements and set the following MD5 in your pillar configuration: {md5}'.format(md5=md5))

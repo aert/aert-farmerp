@@ -27,7 +27,7 @@ Vagrant.configure("2") do |config|
       salt.minion_pub = "salt/keys/vagrant.django-salted.org.pub"
 
       # Run the highstate on start
-      salt.run_highstate = true
+      salt.run_highstate = false
 
       # Install the latest version of SaltStack
       salt.install_type = "daily"
