@@ -1,5 +1,5 @@
 uwsgi:
   reload: True
-  user: vagrant
-  group: vagrant
+  user: www-data
+  group: www-data
   processes: 3  
