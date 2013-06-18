@@ -15,7 +15,6 @@ virtualenvwrapper:
       - pkg: bookkeeping-packages
       - file: {{ pillar['django']['path'] }}
       - git: webapp
-      - pip: virtualenvwrapper
 
 bookkeeping_env_postactivate:
   file.managed:
@@ -28,3 +27,14 @@ bookkeeping_env_postactivate:
     - require:
       - virtualenv: {{ pillar['django']['virtualenv'] }}
 
+
+bookkeeping_env_folder:
+  file.directory:
+    - name: {{ pillar['django']['virtualenv'] }}
+    - user: {{ pillar['django']['user'] }}
+    - group: {{ pillar['django']['group'] }}
+    - recurse:
+      - user
+      - group
+    - require:
+      - virtualenv: {{ pillar['django']['virtualenv'] }}
