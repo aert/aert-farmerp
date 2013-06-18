@@ -13,3 +13,14 @@ include:
       - file: {{ pillar['django']['path'] }}
       - git: webapp
 
+bookkeeping_env_postactivate:
+  file.managed:
+    - name: {{ pillar['django']['virtualenv'] }}/bin/postactivate
+    - source: salt://aert_bookkeeping/venv.postactivate
+    - template: jinja
+    - user: www-data
+    - group: www-data
+    - mode: 755
+    - require:
+      - virtualenv: {{ pillar['django']['virtualenv'] }}
+
