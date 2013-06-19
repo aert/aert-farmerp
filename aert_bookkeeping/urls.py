@@ -11,6 +11,7 @@ urlpatterns = patterns('',
 
                        # Apps
                        url(r'^book', include('aert_bookkeeping_core.urls')),
+                       url(r'^book', include('aert_bookkeeping_core.urls')),
 
                        # Examples:
                        # url(r'^$', 'aert_bookkeeping.views.home', name='home'),
@@ -18,6 +19,7 @@ urlpatterns = patterns('',
                        # Uncomment the admin/doc line below to enable admin documentation:
                        # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
-                       # Uncomment the next line to enable the admin:
+                       # Admin
+                       url(r'^grappelli/', include('grappelli.urls')),
                        url(r'^admin/', include(admin.site.urls)),
                        )
