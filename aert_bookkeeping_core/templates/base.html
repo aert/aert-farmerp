@@ -47,7 +47,7 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </a>
-                  <a class="brand" href="#">Accounting</a>
+                  <a class="brand" href="{% url 'home' %}">Accounting</a>
                    <div class="nav pull-right">
                           <!-- CreditBook DropDown -->
                           <li class="dropdown">
@@ -62,9 +62,9 @@
                    </div>
                   <div class="nav-collapse collapse">
                       <ul class="nav ">
-                          <li class="active"><a href="#">Cash Journal</a></li>
-                          <li><a href="#">Credit Books</a></li>
-                          <li><a href="#about">Accounts</a></li>
+                          <li class="active"><a href="{% url 'cash_journal' %}">Cash Journal</a></li>
+                          <li><a href="{% url 'credit_book' %}">Credit Books</a></li>
+                          <li><a href="{% url 'accounts' %}">Accounts</a></li>
                       </ul>
                   </div><!--/.nav-collapse -->
               </div>

@@ -1,5 +1,4 @@
 from django.conf.urls import patterns, include, url
-from django.views.generic import TemplateView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -7,19 +6,13 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-                       url(r'^$', TemplateView.as_view(template_name='base.html')),
+        # Apps
+        url(r'^', include('aert_bookkeeping_core.urls')),
 
-                       # Apps
-                       url(r'^book', include('aert_bookkeeping_core.urls')),
-                       url(r'^book', include('aert_bookkeeping_core.urls')),
+        # Uncomment the admin/doc line below to enable admin documentation:
+        # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
-                       # Examples:
-                       # url(r'^$', 'aert_bookkeeping.views.home', name='home'),
-
-                       # Uncomment the admin/doc line below to enable admin documentation:
-                       # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-                       # Admin
-                       url(r'^grappelli/', include('grappelli.urls')),
-                       url(r'^admin/', include(admin.site.urls)),
-                       )
+        # Admin
+        url(r'^grappelli/', include('grappelli.urls')),
+        url(r'^admin/', include(admin.site.urls)),
+        )
