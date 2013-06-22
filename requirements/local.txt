@@ -9,3 +9,4 @@ Sphinx==1.2b1
 fabric
 fabtools
 wheel
+pip-tools
