@@ -1,5 +1,4 @@
 from fabric.api import *
-from fabric import colors
 
 # Other
 SETTINGS_FORMAT = 'aert_bookkeeping_site.settings.{}'
@@ -24,4 +23,3 @@ def syncdb(env="local"):
 def migrate(env="local"):
     """ Django South migrate command."""
     manage_py("migrate", env)
-

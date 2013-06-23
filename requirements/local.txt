@@ -10,3 +10,4 @@ fabric
 fabtools
 wheel
 pip-tools
+flake8

@@ -1,6 +1,4 @@
-﻿# vim: set fileencoding=utf-8
-
-from __future__ import unicode_literals
+﻿from __future__ import unicode_literals
 from django.db import models
 from django.utils.translation import ugettext, ugettext_lazy as _
 from django.utils.encoding import smart_text
