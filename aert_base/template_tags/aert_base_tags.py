@@ -5,12 +5,16 @@ from django.contrib.staticfiles.templatetags import static
 register = template.Library()
 
 
+def current_theme():
+    return settings.THEME_NAME
+
+
 class ThemeAssetNode(template.Node):
     def __init__(self, static_url):
         self.static_url = static_url
 
     def render(self, context):
-        path = "themes/" + settings.THEME_NAME + "/" + self.static_url
+        path = "themes/" + current_theme() + "/" + self.static_url
         return static(path)
 
 
