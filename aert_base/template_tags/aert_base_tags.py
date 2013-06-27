@@ -34,14 +34,14 @@ def get_theme_asset(parser, token, asset_type):
 
 @register.tag('aert_theme_js')
 def do_aert_theme_js(parser, token):
-    return get_theme_asset(parser, token, 'js')
+    return get_theme_asset(parser, token, 'javascripts')
 
 
 @register.tag('aert_theme_css')
 def do_aert_theme_css(parser, token):
-    return get_theme_asset(parser, token, 'css')
+    return get_theme_asset(parser, token, 'stylesheets')
 
 
 @register.tag('aert_theme_img')
 def do_aert_theme_img(parser, token):
-    return get_theme_asset(parser, token, 'img')
+    return get_theme_asset(parser, token, 'images')
