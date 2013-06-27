@@ -5,58 +5,110 @@
 {% load compress %}
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{% block title %}aert_bookkeeping{% endblock title %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<html lang="{{ current_language }}">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ html_title }}</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="bookkeeping,accounting">
 
-    <!-- Le styles -->
-    {% compress css %}
-    <link href="{% static 'stylesheets/application.css' %}" rel="stylesheet">
-    <link href="{% aert_theme_css 'application.css' %}" rel="stylesheet">
-    <link href="{% aert_theme_css 'buttons.css' %}" rel="stylesheet">
-    <link href="{% aert_theme_css 'aristo.css' %}" rel="stylesheet">
+        <!-- Le styles -->
+        {% compress css %}
+        <link href="{% static 'stylesheets/jquery/jquery-ui-1.9.2.css' %}" rel="stylesheet">
+        <link href="{% static 'stylesheets/application.css' %}" rel="stylesheet">
+        <link href="{% aert_theme_css 'application.css' %}" rel="stylesheet">
+        <link href="{% aert_theme_css 'buttons.css' %}" rel="stylesheet">
+        <link href="{% aert_theme_css 'aristo.css' %}" rel="stylesheet">
 
-    <!-- This file store project specific CSS -->
-    <link type="text/less" href="{% static 'aert_bookkeeping/css/project.less' %}" rel="stylesheet">
+        <!-- This file store project specific CSS -->
+        <link type="text/less" href="{% static 'aert_bookkeeping/css/project.less' %}" rel="stylesheet">
 
-    {% endcompress %}
+        {% endcompress %}
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 
-    <!-- Use this to quickly test CSS changes in a template,
+        <!-- Use this to quickly test CSS changes in a template,
         then move to project.css -->
-    {% block extra_css %}{% endblock extra_css %}
-  </head>
+        {% block extra_css %}{% endblock extra_css %}
+    </head>
 
-  <body>
+    <body class="">
+        <div id="wrapper">
+            <div id="wrapper2">
+                <div id="wrapper3">
+                    <div id="top-menu">
+                        <div id="account">
+                            <%= render_menu :account_menu -%>
+                        </div>
+                        <%= content_tag('div', "#{l(:label_logged_as)} #{link_to_user(User.current, :format => :username)}".html_safe, :id => 'loggedas') if User.current.logged? %>
+                        <%= render_menu :top_menu if User.current.logged? || !Setting.login_required? -%>
+                    </div>
 
-    <div class="container">
+                    <div id="header">
+                        <% if User.current.logged? || !Setting.login_required? %>
+                        <div id="quick-search">
+                            <%= form_tag({:controller => 'search', :action => 'index', :id => @project}, :method => :get ) do %>
+                            <%= hidden_field_tag(controller.default_search_scope, 1, :id => nil) if controller.default_search_scope %>
+                            <label for='q'>
+                                <%= link_to l(:label_search), {:controller => 'search', :action => 'index', :id => @project}, :accesskey => accesskey(:search) %>:
+                            </label>
+                            <%= text_field_tag 'q', @question, :size => 20, :class => 'small', :accesskey => accesskey(:quick_search) %>
+                            <% end %>
+                            <%= render_project_jump_box %>
+                        </div>
+                        <% end %>
 
-      <h2>{% block page_title %}Example Base Template{% endblock page_title %}</h2>
+                        <h1>{{ page_header_title }}</h1>
 
-      {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
-      {% endblock content %}
+                        <% if display_main_menu?(@project) %>
+                        <div id="main-menu">
+                            <%= render_main_menu(@project) %>
+                        </div>
+                        <% end %>
+                    </div>
 
-    </div> <!-- /container -->
+                    <div id="main" class="<%= sidebar_content? ? '' : 'nosidebar' %>">
+                        <div id="sidebar">
+                            {% block sidebar %} {% endblock sidebar %}
+                            <%= view_layouts_base_sidebar_hook_response %>
+                        </div>
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    {% compress js %}
-    <script src="{% static 'javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js' %}"></script>
+                        <div id="content">
+                            <%= render_flash_messages %>
+                            {% block content %}
+                            <p>Use this document as a way to quick start any new project.</p>
+                            {% endblock content %}
+                            <%= call_hook :view_layouts_base_content %>
+                            <div style="clear:both;"></div>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- place project specific Javascript in this file -->
-    <script type="text/coffeescript" src="{% static 'aert_bookkeeping/js/project.coffee' %}"></script>
+                <div id="ajax-indicator" style="display:none;"><span><%= l(:label_loading) %></span></div>
+                <div id="ajax-modal" style="display:none;"></div>
 
-    {% block extra_js %}{% endblock extra_js %}
-    {% endcompress %}
-  </body>
+                <div id="footer">
+                    <div class="bgl"><div class="bgr">
+                            Powered by <%= link_to Redmine::Info.app_name, Redmine::Info.url %> &copy; 2013 Abdourakhmane Ripault
+                    </div></div>
+                </div>
+            </div>
+        </div>
+        <%= call_hook :view_layouts_base_body_bottom %>
+
+        <!-- Le javascript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        {% compress js %}
+        <script src="{% static 'javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js' %}"></script>
+
+        <!-- place project specific Javascript in this file -->
+        <script type="text/coffeescript" src="{% static 'aert_bookkeeping/js/project.coffee' %}"></script>
+
+        {% block extra_js %}{% endblock extra_js %}
+        {% endcompress %}
+    </body>
 </html>
