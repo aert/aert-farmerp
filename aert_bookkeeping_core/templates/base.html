@@ -1,3 +1,6 @@
+{% load aert_theme_js %}
+{% load aert_theme_css %}
+{% load aert_theme_img %}
 {% load staticfiles %}
 {% load compress %}
 
@@ -12,15 +15,7 @@
 
     <!-- Le styles -->
     {% compress css %}
-    <link href="{% static 'css/bootstrap-flatly.min.css' %}" rel="stylesheet">
-
-    <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-    </style>
-    <link href="{% static 'css/bootstrap-responsive.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/bootstrap-select.min.css' %}" rel="stylesheet">
+    <link href="{% aert_theme_css 'application.css' %}" rel="stylesheet">
 
     <!-- This file store project specific CSS -->
     <link type="text/less" href="{% static 'aert_bookkeeping/css/project.less' %}" rel="stylesheet">

@@ -257,3 +257,4 @@ COMPRESS_PRECOMPILERS = (
     ('text/less', 'lessc {infile} {outfile}'),
 )
 
+THEME_NAME = 'coffee'
