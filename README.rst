@@ -6,9 +6,9 @@ aert-bookkeeping
 Introduction
 ************
  
-This is my accounting software for farming projects.
+This is my accounting software based on FAO guidelines.
 
-It's based on FAO guidelines : www.fao.org/docrep/field/003/AB619F/AB619F00.htm
+See : www.fao.org/docrep/field/003/AB619F/AB619F00.htm
 
 Notable features :
 
@@ -26,32 +26,21 @@ Dependencies
 ============
  
 * Python 2.7
+* virtualenvwrapper
 
 Installation
 ************
  
-* In development::
+* Development::
 
      $ sudo apt-get install libpq-dev
      $ cdproject
-     $ pip install -r requirements/local.txt
+     $ pip install -r deployment/requirements/local.txt
+     $ cd sources
      $ add2virtualenv `pwd`
 
      $ sudo npm install -g less
      $ sudo npm install -g coffee-script
-     
-* For production::
-
-     $ pip install -r requirement.txt
- 
-* Run Web Server::
- 
-   $ python manage.py runserver
-
-Tests 
-*****
- 
-``...``
 
 More Information 
 ****************
