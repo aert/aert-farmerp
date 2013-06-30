@@ -1,6 +1,0 @@
-#!/bin/bash
-# This hook is run after this virtualenv is activated.
-
-export DJANGO_SETTINGS_MODULE="{{ pillar['django']['settings'] }}"
-export PYTHONPATH=$PYTHONPATH:{{ pillar['django']['path'] }}
-

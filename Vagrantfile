@@ -13,25 +13,7 @@ Vagrant.configure("2") do |config|
     web.vm.network :forwarded_port, guest: 5432, host: 5432
 
     # Share for masterless server
-    web.vm.synced_folder "salt/roots/", "/srv/"
-
-    web.vm.provision :salt do |salt|
-      # Configure the minion
-      salt.minion_config = "salt/minion.conf"
-
-      # Show the output of salt
-      salt.verbose = true
-      
-      # Pre-distribute these keys on our local installation
-      salt.minion_key = "salt/keys/vagrant.django-salted.org.pem"
-      salt.minion_pub = "salt/keys/vagrant.django-salted.org.pub"
-
-      # Run the highstate on start
-      salt.run_highstate = false
-
-      # Install the latest version of SaltStack
-      salt.install_type = "daily"
-    end
+    #web.vm.synced_folder "salt/roots/", "/srv/"
 
     # Customize the box
     web.vm.provider :virtualbox do |v|

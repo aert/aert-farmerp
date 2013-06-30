@@ -1,0 +1,13 @@
+# Local development dependencies go here
+-r base.txt
+coverage==3.6
+django-discover-runner==0.4
+django-debug-toolbar==0.9.4
+Sphinx==1.2b1
+
+# Build tools
+fabric
+fabtools
+wheel
+pip-tools
+flake8
