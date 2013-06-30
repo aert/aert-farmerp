@@ -9,7 +9,7 @@
 *~
 
 # Sphinx docs:
-build
+docs/build
 
 # SQLite3 database files:
 *.db
@@ -20,6 +20,4 @@ build
 # Others:
 .idea
 .vagrant
-wheel
-salt/roots/salt/aert_bookkeeping/wheel-requirements.tar.gz
 .tags
