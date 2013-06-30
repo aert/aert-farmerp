@@ -1,6 +1,8 @@
 aert-bookkeeping
 ''''''''''''''''
 
+**Warning:** This project is currently in an **alpha** state and currently not meant for real projects.
+
 Introduction
 ************
  
