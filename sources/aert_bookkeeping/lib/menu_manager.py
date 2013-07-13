@@ -1,7 +1,7 @@
 from django.utils.html import escape as h
 from django.utils.html import format_html
+from django.utils.html import force_text
 from django.utils.html import format_html_join
-from django.utils.html import smart_urlquote
 from django.utils.safestring import mark_safe
 from .util import link_to
 from .util import l_or_humanize
@@ -10,10 +10,11 @@ from inflexion import dasherize, humanize
 
 class MenuError(Exception):
 
-     def __init__(self, value):
-         self.value = value
-     def __str__(self):
-         return repr(self.value)
+    def __init__(self, value):
+        self.value = value
+
+    def __str__(self):
+        return repr(self.value)
 
 
 class MenuManager(object):
@@ -49,14 +50,14 @@ class MenuHelper(object):
     @property
     def current_menu_item(self):
         '''Returns the current menu item name'''
-        return controller.current_menu_item
+        return self.controller.current_menu_item
 
     def render_main_menu(self, project):
         '''Renders the application main menu'''
         if (project and not project.is_new_record):
-            render_menu('project_menu')
+            self.render_menu('project_menu')
         else:
-            render_menu('application_menu')
+            self.render_menu('application_menu')
 
     def check_display_main_menu(self, project):
         if project and not project.is_new_record:
@@ -81,11 +82,12 @@ class MenuHelper(object):
         else:
             caption, url, selected = self.extract_node_details(node, project)
             return format_html('<li>{0}</li>',
-                    self.render_single_menu_node(node, caption, url, selected))
+                               self.render_single_menu_node(node, caption, url,
+                                                            selected))
 
     def render_menu_node_with_children(self, node, project=None):
-        caption, url, selected = extract_node_details(node, project)
-        
+        caption, url, selected = self.extract_node_details(node, project)
+
         html = []
         html.append('<li>')
         #Parent
@@ -93,17 +95,19 @@ class MenuHelper(object):
 
         # Standard children
         standard_children_list = (self.render_menu_node(child, project)
-                for child in node.children)
+                                  for child in node.children)
 
-        if not standard_children_list):
+        if not standard_children_list:
             html.append(format_html('<ul class="menu-children">{0}</ul>',
-                ''.join(standard_children_list)))
+                                    ''.join(standard_children_list)))
 
         # Unattached children
-        unattached_children_list = self.render_unattached_children_menu(node, project)
+        unattached_children_list = \
+            self.render_unattached_children_menu(node, project)
         if not unattached_children_list:
-            html.append(format_html('<ul class="menu-children unattached">{0}</ul>',
-                unattached_children_list))
+            html.append(
+                format_html('<ul class="menu-children unattached">{0}</ul>',
+                            unattached_children_list))
 
         html.append('</li>')
         return mark_safe('\n'.join(html))
@@ -115,15 +119,18 @@ class MenuHelper(object):
 
         unattached_children = node.child_menus.call(project)
         # Tree nodes support #each so we need to do opbject detection
-        if not isinstance(unattached_children, (tuple,list)):
+        if not isinstance(unattached_children, (tuple, list)):
             raise MenuError("child_menus must be an array of MenuItems")
 
-        return format_html_join('\n', '<li>{0}</li>',
-                [self.render_unattached_menu_item(child, project)
-                    for child in unattached_children]
+        return format_html_join(
+            '\n', '<li>{0}</li>',
+            [self.render_unattached_menu_item(child, project)
+                for child in unattached_children]
+        )
 
     def render_single_menu_node(self, item, caption, url, selected):
-        return link_to(h(caption), url, item.html_options({'selected': selected})) 
+        return link_to(h(caption), url,
+                       item.html_options({'selected': selected}))
 
     def render_unattached_menu_item(self, menu_item, project):
         if not isinstance(menu_item, MenuItem):
@@ -131,11 +138,10 @@ class MenuHelper(object):
 
         if User.current.check_allowed_to(menu_item_url, project):
             return link_to(h(menu_item.caption),
-                    menu_item.url,
-                    menu_item.html_options)
+                           menu_item.url,
+                           menu_item.html_options)
         else:
             return None
-
 
     @staticmethod
     def menu_items_for(menu, project=None):
@@ -146,7 +152,7 @@ class MenuHelper(object):
 
         return items
 
-    @static
+    @staticmethod
     def extract_node_details(node, project=None):
         item = node
         if isinstance(item.url, dict):
@@ -223,15 +229,15 @@ class Mapper(object):
         if first:
             target_root.prepend(MenuItem(name, url, options))
         elif before:
-            if exists(before):
+            if self.exists(before):
                 target_root.add_at(MenuItem(name, url, options),
                                    position_of(before))
             else:
                 target_root.add(MenuItem(name, url, options))
         elif after:
-            if exists(after):
+            if self.exists(after):
                 target_root.add_at(MenuItem(name, url, options),
-                        position_of(after) + 1)
+                                   position_of(after) + 1)
             else:
                 target_root.add(MenuItem(name, url, options))
         elif last:  # don't delete, needs to be stored
@@ -252,6 +258,7 @@ class Mapper(object):
         def find(name):
             next((x for x in self.menu_items if x.name == name), None)
 
+        @staticmethod
         def position_of(name):
             for node in self.menu_items:
                 if node.name == name:
@@ -270,7 +277,7 @@ class MenuNode(object):
 
     @property
     def children(self):
-        return _children
+        return self._children
 
     def has_children(self):
         return len(self.children) > 0
@@ -280,64 +287,72 @@ class MenuNode(object):
 
     def size(self):
         ''' Returns the number of descendants + 1'''
-        return reduce(lambda total,node: total + node.size, children, 1)
-    
+        return reduce(lambda total, node: total + node.size, self.children, 1)
+
     # Adds a child at first position
-    def prepend(child):
+    def prepend(self, child):
         self.add_at(child, 0)
 
     # Adds a child at given position
-    def add_at(child, position):
-        if any(node for node in self.children if node.name == child.name)
-           raise MenuError("Child already added")
+    def add_at(self, child, position):
+        if any(node for node in self.children if node.name == child.name):
+            raise MenuError("Child already added")
 
         self.children.insert(position, child)
         child.parent = self
         return child
 
     # Adds a child as last child
-    def add_last(child):
-        add_at(child, -1)
+    def add_last(self, child):
+        self.add_at(child, -1)
         self.last_items_count += 1
         return child
 
     # Adds a child
-    def add(child):
+    def add(self, child):
         position = self.children.size() - self.last_items_count
-        return add_at(child, position)
+        return self.add_at(child, position)
 
     def __lshift__(self, other):
         return self.add(other)
 
     # Removes a child
-    def remove(child):
+    def remove(self, child):
         del self.children[child]
         if child and child.last:
-           self.last_items_count -= +1 
+            self.last_items_count -= +1
         child.parent = None
         return child
-  
+
     # Returns the position for this node in it's parent
     @property
     def position(self):
         return self.parent.children.index(self)
-  
+
     # Returns the root for this node
     @property
     def root(self):
         root = self
         while root.parent:
-           root = root.parent
+            root = root.parent
         return root
+
 
 class MenuItem(MenuNode):
     #include Redmine::I18n
-  
+
     def __init__(self, name, url, options):
-        raise ValueError("Invalid option 'if' for menu item '#{name}'") if options['if'] and not hasasttr(options['if'], '__call__')
-        raise ValueError("Invalid option 'html' for menu item '#{name}'") if options['html'] and not isinstance(options['html'], dict)
-        raise ValueError("Cannot set the 'parent' to be the same as this item") if options['parent'] == name
-        raise ValueError("Invalid option 'children' for menu item '#{name}'") if options['children'] and not hasasttr(options['children'], '__call__')
+        if options['if'] and not hasattr(options['if'], '__call__'):
+            raise ValueError("Invalid option 'if' for menu item '#{name}'")
+        if options['html'] and not isinstance(options['html'], dict):
+            raise ValueError("Invalid option 'html' for menu item '#{name}'")
+        if options['parent'] == name:
+            raise ValueError("Cannot set the 'parent' to be the same"
+                             " as this item")
+        if options['children'] \
+           and not hasattr(options['children'], '__call__'):
+            raise ValueError("Invalid option 'children' for"
+                             " menu item '#{name}'")
         self.name = name
         self.url = url
         self.condition = options['if']
@@ -345,27 +360,28 @@ class MenuItem(MenuNode):
         self.caption = options['caption']
         self.html_options = options['html'] or {}
         # Adds a unique class to each menu item based on its name
-        self.html_options['class'] = ' '.join(set(filter(None,
-            [self.html_options['class'], dasherize(force_text(self.name))]
+        self.html_options['class'] = ' '.join(
+            set(filter(None,
+                [self.html_options['class'], dasherize(force_text(self.name))]
             )))
         self.parent = options['parent']
         self.child_menus = options['children']
         self.last = options['last'] or False
         super(self, self.name)
-  
-    def caption(project=None):
+
+    def caption(self, project=None):
         if hasattr(self.caption, '__call__'):
             c = force_text(self.caption(project))
             if not c:
-               c = humanize(force_text(self.name))
+                c = humanize(force_text(self.name))
             return c
         else:
-            if self.caption == None:
-                return l_or_humanize(name, prefix='label_')
+            if self.caption is None:
+                return l_or_humanize(self.name, prefix='label_')
             else:
                 return self.caption
-  
-    def html_options(options={}):
+
+    def html_options(self, options={}):
         if options['selected']:
             o = self.html_options.copy()
             o['class'] += ' selected'
