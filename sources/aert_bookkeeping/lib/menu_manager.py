@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.utils.html import escape as h
 from django.utils.html import format_html
 from django.utils.html import force_text
@@ -5,7 +6,7 @@ from django.utils.html import format_html_join
 from django.utils.safestring import mark_safe
 from .util import link_to
 from .util import l_or_humanize
-from inflexion import dasherize, humanize
+from .inflexion import dasherize, humanize
 
 
 class MenuError(Exception):
@@ -136,7 +137,7 @@ class MenuHelper(object):
         if not isinstance(menu_item, MenuItem):
             raise MenuError(":child_menus must be an array of MenuItems")
 
-        if User.current.check_allowed_to(menu_item_url, project):
+        if User.current.check_allowed_to(menu_item.url, project):
             return link_to(h(menu_item.caption),
                            menu_item.url,
                            menu_item.html_options)
@@ -147,13 +148,12 @@ class MenuHelper(object):
     def menu_items_for(menu, project=None):
         items = []
         for node in MenuManager().items(menu).root.children:
-            if check_allowed_node(node, User.current, project):
+            if MenuHelper.check_allowed_node(node, User.current, project):
                 items.append(node)
 
         return items
 
-    @staticmethod
-    def extract_node_details(node, project=None):
+    def extract_node_details(self, node, project=None):
         item = node
         if isinstance(item.url, dict):
             if project is None:
@@ -163,7 +163,7 @@ class MenuHelper(object):
         else:
             url = item.url
         caption = item.caption(project)
-        return [caption, url, (current_menu_item == item.name)]
+        return [caption, url, (self.current_menu_item == item.name)]
 
     @staticmethod
     def check_allowed_node(node, user, project):
@@ -231,13 +231,13 @@ class Mapper(object):
         elif before:
             if self.exists(before):
                 target_root.add_at(MenuItem(name, url, options),
-                                   position_of(before))
+                                   Mapper.position_of(before))
             else:
                 target_root.add(MenuItem(name, url, options))
         elif after:
             if self.exists(after):
                 target_root.add_at(MenuItem(name, url, options),
-                                   position_of(after) + 1)
+                                   Mapper.position_of(after) + 1)
             else:
                 target_root.add(MenuItem(name, url, options))
         elif last:  # don't delete, needs to be stored
