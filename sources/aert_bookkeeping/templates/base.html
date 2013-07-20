@@ -67,25 +67,24 @@
 
                         <h1>{{ page_header_title }}</h1>
 
-                        <% if display_main_menu?(@project) %>
+                        {% comment %} if display_main_menu?(@project) {% endcomment %}
+                        {% if display_main_menu %}
                         <div id="main-menu">
-                            <%= render_main_menu(@project) %>
+                            {% render_main_menu project %}
                         </div>
-                        <% end %>
+                        {% endif %}
                     </div>
 
                     <div id="main" class="<%= sidebar_content? ? '' : 'nosidebar' %>">
                         <div id="sidebar">
                             {% block sidebar %} {% endblock sidebar %}
-                            <%= view_layouts_base_sidebar_hook_response %>
                         </div>
 
                         <div id="content">
-                            <%= render_flash_messages %>
+                            {% render_flash_messages %}
                             {% block content %}
                             <p>Use this document as a way to quick start any new project.</p>
                             {% endblock content %}
-                            <%= call_hook :view_layouts_base_content %>
                             <div style="clear:both;"></div>
                         </div>
                     </div>
@@ -101,7 +100,6 @@
                 </div>
             </div>
         </div>
-        <%= call_hook :view_layouts_base_body_bottom %>
 
         <!-- Le javascript
         ================================================== -->

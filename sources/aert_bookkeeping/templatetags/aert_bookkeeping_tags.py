@@ -8,3 +8,13 @@ register = template.Library()
 def render_menu(menu, project=None):
     #return MenuManager().render_menu(menu, project)
     return {"menu":  menu, "project": project}
+
+
+@register.simple_tag
+def render_main_menu(project=None):
+    return "render_main_menu {}".format(project)
+
+
+@register.simple_tag(takes_context=True)
+def render_flash_messages(context):
+    return "render_flash_messages"
