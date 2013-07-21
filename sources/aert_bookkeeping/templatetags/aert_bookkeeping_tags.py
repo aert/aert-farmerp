@@ -10,9 +10,9 @@ def render_menu(menu, project=None):
     return {"menu":  menu, "project": project}
 
 
-@register.simple_tag
+@register.inclusion_tag('aert_bookkeeping/tags/render_main_menu.html')
 def render_main_menu(project=None):
-    return "render_main_menu {}".format(project)
+    return {"project": project}
 
 
 @register.simple_tag(takes_context=True)

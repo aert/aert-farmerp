@@ -67,12 +67,9 @@
 
                         <h1>{{ page_header_title }}</h1>
 
-                        {% comment %} if display_main_menu?(@project) {% endcomment %}
-                        {% if display_main_menu %}
                         <div id="main-menu">
                             {% render_main_menu project %}
                         </div>
-                        {% endif %}
                     </div>
 
                     <div id="main" class="<%= sidebar_content? ? '' : 'nosidebar' %>">
