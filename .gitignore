@@ -9,7 +9,7 @@
 *~
 
 # Sphinx docs:
-docs/build
+/docs/build
 
 # SQLite3 database files:
 *.db
@@ -21,3 +21,6 @@ docs/build
 .idea
 .vagrant
 .tags
+
+# This project
+/public/assets/*
