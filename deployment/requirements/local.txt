@@ -11,3 +11,6 @@ fabtools==0.15.0
 wheel==0.21.0
 pip-tools==0.3.4
 flake8==2.0
+
+# Deploy tools
+ansible==1.2.2

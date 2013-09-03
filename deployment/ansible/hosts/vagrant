@@ -1,0 +1,11 @@
+[webservers]
+#vagrant.aert-bookkeeping.org
+192.168.111.222
+
+[db]
+#vagrant.aert-bookkeeping.org
+192.168.111.222
+
+[monitoring]
+#vagrant.aert-bookkeeping.org
+192.168.111.222
