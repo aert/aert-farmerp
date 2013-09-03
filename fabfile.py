@@ -1,5 +1,5 @@
 from fabric.api import *
 from fabric import colors
-from deployment.fabric_tasks import admin
-from deployment.fabric_tasks import dev
+from deploy.fabric_tasks import admin
+from deploy.fabric_tasks import dev
 
