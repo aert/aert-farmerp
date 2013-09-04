@@ -23,10 +23,7 @@ Dependencies
  
 * Debian 7 (or Ubuntu >= 12.04)
 * Python 2.7
-
-*Optional*:
-
-* Vagrant
+* Vagrant *(Optional)*
 
 
 Installation
