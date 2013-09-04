@@ -1,0 +1,12 @@
+---
+# Defines tasks applicable across all machines in the infrastructure.
+
+- name: Install base pkgs
+  apt: pkg=$item state=installed
+  with_items:
+    - vim
+    - git
+    - build-essential
+    - etckeeper
+
+- include: security.yml tags=security

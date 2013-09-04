@@ -1,11 +1,11 @@
 [webservers]
 #vagrant.aert-bookkeeping.org
-192.168.111.222
+root@192.168.111.222
 
-[db]
+[databases]
 #vagrant.aert-bookkeeping.org
-192.168.111.222
+root@192.168.111.222
 
 [monitoring]
 #vagrant.aert-bookkeeping.org
-192.168.111.222
+root@192.168.111.222

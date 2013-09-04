@@ -1,0 +1,4 @@
+---
+
+- name: restart denyhosts
+  command: /etc/init.d/denyhosts restart

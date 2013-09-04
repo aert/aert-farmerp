@@ -1,0 +1,11 @@
+---
+# Install Nginx, PHP5 (PHP-FPM), And Fcgiwrap
+# http://www.howtoforge.com/perfect-server-debian-wheezy-nginx-bind-dovecot-ispconfig-3-p4
+
+- name: Install Nginx
+  apt: pkg=$item state=installed
+  with_items:
+    - nginx
+  notify:
+    - restart nginx
+

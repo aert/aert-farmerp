@@ -6,11 +6,9 @@ aert-bookkeeping
 Introduction
 ************
  
-This is my accounting software based on FAO guidelines.
+Accounting software relying on `FAO guidelines`_.
 
-See : www.fao.org/docrep/field/003/AB619F/AB619F00.htm
-
-Notable features :
+Notable features:
 
 * Cash Journal
 * Credit Book
@@ -20,13 +18,11 @@ Notable features :
 Requirements 
 ************
  
-This code has been run and tested on Python 2.7.
-
 Dependencies
 ============
  
+* Debian 7 (or Ubuntu >= 12.04)
 * Python 2.7
-* virtualenvwrapper
 
 *Optional*:
 
@@ -47,6 +43,17 @@ Installation
      $ sudo npm install -g less
      $ sudo npm install -g coffee-script
 
+Test
+****
+
+* Using Vagrant::
+
+     $ vagrant up
+     $ fab dev.h_vagrant dev.setup_ssh_vagrant
+     $ cd deploy/ansible
+     $ ansible-playbook -i hosts/vagrant top.yml -v
+
+
 More Information 
 ****************
  
@@ -66,4 +73,6 @@ Support
 
 Those who wish to contribute directly to the project can contact me at devaert@gmail.com to talk about getting repository access granted.
 
+
+.. _`FAO guidelines`: http://www.fao.org/docrep/field/003/AB619F/AB619F00.htm
 

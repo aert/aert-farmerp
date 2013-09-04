@@ -1,0 +1,8 @@
+- name: Install security-related packages
+  apt: pkg=$item state=installed
+  with_items:
+    - denyhosts
+
+- name: DenyHosts config
+  copy: src=etc_denyhosts.conf dest=/etc/denyhosts.conf
+  notify: restart denyhosts

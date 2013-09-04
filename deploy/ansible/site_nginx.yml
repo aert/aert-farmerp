@@ -1,0 +1,10 @@
+---
+# This is the top-level playbook that defines our entire infrastructure.
+
+- hosts: all
+  gather_facts: False
+
+  roles:
+    - common
+    - nginx
+
