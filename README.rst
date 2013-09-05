@@ -45,10 +45,8 @@ Test
 
 * Using Vagrant::
 
-     $ vagrant up
-     $ fab dev.h_vagrant dev.setup_ssh_vagrant
-     $ cd deploy/ansible
-     $ ansible-playbook -i hosts/vagrant top.yml -v
+     $ invoke bootstrap_vagrant
+     $ invoke deploy_vagrant
 
 
 More Information 
