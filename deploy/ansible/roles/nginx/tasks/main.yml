@@ -33,5 +33,5 @@
     - restart nginx
  
 
-
 - include: uwsgi.yml tags=uwsgi
+- include: app_bookkeeping.yml tags=app

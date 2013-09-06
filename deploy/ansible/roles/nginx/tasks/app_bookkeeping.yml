@@ -1,0 +1,26 @@
+---
+
+# Create VirtualEnv
+
+#TODO
+
+# Install Wheel requirements
+
+#TODO
+
+# Get Git sources
+
+- name: /srv/www/apps
+  file: path=/srv/www/apps state=directory owner=www-data group=www-data
+
+- name: app_bookkeeping_git
+  git: repo=https://github.com/aert/aert-bookkeeping.git dest=/srv/www/apps/aert-bookkeeping.git update=yes force=yes
+
+# Migrate db
+
+#TODO
+
+# Configure uWSGI
+
+#TODO
+
