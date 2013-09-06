@@ -1,0 +1,35 @@
+---
+
+# Installation
+
+- name: uwsgi-apt
+  apt: pkg=$item state=installed
+  with_items:
+    - python-dev
+    - python-pip
+
+- name: uwsgi-pip
+  pip: name=uwsgi
+
+# Directories & files
+
+- name: /etc/uwsgi/apps-enabled
+  file: path=/etc/uwsgi/apps-enabled state=directory owner=www-data group=www-data
+
+- name: /srv/log/uwsgi
+  file: path=/srv/log/uwsgi state=directory owner=www-data group=www-data
+
+- name: /srv/log/uwsgi/emperor.log
+  file: path=/srv/log/uwsgi/emperor.log owner=www-data group=www-data
+
+# Configure
+
+- name: uwsgi-config
+  copy: src=uwsgi.conf /etc/init/uwsgi.conf
+  notify:
+    - restart uwsgi
+
+# Service
+        
+- name: uwsgi-service
+  service: name=uwsgi state=started

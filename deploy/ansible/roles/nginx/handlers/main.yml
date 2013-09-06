@@ -3,3 +3,7 @@
 - name: restart nginx
   command: /etc/init.d/nginx restart
 
+- name: restart uwsgi
+  service: name=nginx state=restarted
+  service: name=uwsgi state=restarted
+
