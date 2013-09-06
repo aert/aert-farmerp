@@ -66,7 +66,7 @@ Support
 * Issue Tracking : https://github.com/aert/aert-bookkeeping/issues
 * Pull Request : https://github.com/aert/aert-bookkeeping/pulls
 
-Those who wish to contribute directly to the project can contact me at devaert@gmail.com to talk about getting repository access granted.
+Those who wish to contribute directly to the project can contact me at dev.aert@gmail.com to talk about getting repository access granted.
 
 
 .. _`FAO guidelines`: http://www.fao.org/docrep/field/003/AB619F/AB619F00.htm
