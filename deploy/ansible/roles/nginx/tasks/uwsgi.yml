@@ -5,6 +5,7 @@
 - name: uwsgi-apt
   apt: pkg=$item state=installed
   with_items:
+    - build-essential
     - python-dev
     - python-pip
 
