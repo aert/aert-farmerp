@@ -45,8 +45,8 @@ Test
 
 * Using Vagrant::
 
-     $ invoke bootstrap_vagrant
-     $ invoke deploy_vagrant
+     $ fab vagrant_init
+     $ fab vagrant_run_ansible
 
 
 More Information 
