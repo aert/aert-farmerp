@@ -30,24 +30,47 @@ Dependencies
 Installation
 ************
  
-* Development::
+* Local (development)::
 
-     $ sudo apt-get install libpq-dev
-     $ cdproject
-     $ pip install -r deployment/requirements/local.txt
-     $ cd sources
-     $ add2virtualenv `pwd`
+     $ fab init_env_local
+     $ fab init_env_vagrant
 
-     $ sudo npm install -g less
-     $ sudo npm install -g coffee-script
+* Staging:
 
-Test
-****
+  #. Add hosts in ``deploy/ansible/hosts/staging``.
+  #. Set environment vars in ``deploy/ansible/vars/staging.yml``.
+  #. Launch installation wizard::
+
+       $ fab deploy_staging
+
+* Production:
+
+  #. Add hosts in ``deploy/ansible/hosts/production``
+  #. Set environment vars in ``deploy/ansible/vars/production.yml``
+  #. Launch installation wizard::
+
+     $ fab deploy_prod
+
+
+Usage
+*****
+
+* Local::
+
+    $ fab run_server
+    $ xdg-open http://192.168.111.222/book
+
+* Staging / Production::
+ 
+    $ xdg-open http://<app-server-url>/book
+
+Testing
+*******
 
 * Using Vagrant::
 
-     $ fab vagrant_init
-     $ fab vagrant_run_ansible
+     $ fab init_env_vagrant
+     $ fab run_tests
 
 
 More Information 
@@ -71,4 +94,5 @@ Those who wish to contribute directly to the project can contact me at dev.aert@
 
 
 .. _`FAO guidelines`: http://www.fao.org/docrep/field/003/AB619F/AB619F00.htm
+
 
