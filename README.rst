@@ -1,6 +1,9 @@
 aert-bookkeeping
 ''''''''''''''''
 
+.. image:: https://travis-ci.org/aert/aert-bookkeeping.png?branch=master
+        :target: https://travis-ci.org/aert/aert-bookkeeping
+
 **Warning:** This project is currently in an **alpha** state and currently not meant for real projects.
 
 Introduction
