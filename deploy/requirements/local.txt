@@ -6,8 +6,6 @@ django-debug-toolbar==0.9.4
 Sphinx==1.2b1
 
 # Build tools
-Fabric==1.7.0
-fabtools==0.15.0
 wheel==0.21.0
 pip-tools==0.3.4
 flake8==2.0

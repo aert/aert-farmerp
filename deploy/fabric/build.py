@@ -2,7 +2,7 @@ from os.path import join, basename
 from os import environ
 import hashlib
 
-from fabric.api import *
+from fabric.api import local, task, prefix, lcd
 from fabric import colors
 
 
@@ -36,8 +36,8 @@ def _md5_for_file(filename, block_size=2 ** 20):
 
 
 @task
-def make_wheel(env='staging'):
-    """ Create new wheel requirements file """
+def wheel(env='staging'):
+    """ Creates new wheel file """
     require_path = join(VENV_PROJECT,
                         REQUIRE_PATH_FMT.format(env))
 
