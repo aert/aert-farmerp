@@ -1,9 +1,4 @@
-from os.path import join, basename
-from os import environ
-import hashlib
-
-from fabric.api import *
-from fabric import colors
+from fabric.api import local, sudo, task, env
 
 
 @task
@@ -20,6 +15,6 @@ def h_vagrant():
 @task
 def setup_ssh_vagrant():
     "Set up vagrant"
-    sudo("passwd root")
+    sudo("echo 'root:root' | chpasswd")
     sudo("apt-get update")
-    local("ssh-copy-id root@192.168.111.222")
+    local("sshpass -p root ssh-copy-id root@192.168.111.222")
