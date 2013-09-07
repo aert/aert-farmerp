@@ -6,6 +6,7 @@ from fabric import colors
 def init_env_local():
     """ Setup development env. """
     local('pip install -r deploy/requirements/local.txt')
+    local('cp bin/postactivate.local $VIRTUAL_ENV/bin/postactivate')
 
     with lcd('sources'):
         local('add2virtualenv `pwd`')
