@@ -5,6 +5,7 @@ from fabric import colors
 @task
 def init_env_local():
     """ Setup development env. """
+    local('sudo apt-get install libpq-dev python-dev')
     local('pip install -r deploy/requirements/local.txt')
     local('cp bin/postactivate.local $VIRTUAL_ENV/bin/postactivate')
 

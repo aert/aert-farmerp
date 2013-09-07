@@ -4,7 +4,15 @@
 
 #TODO
 
-# Install Wheel requirements
+# Install requirements
+
+- name: app_bookkeeping-apt
+  apt: pkg=$item state=installed
+  with_items:
+    - libpq-dev
+    - python-dev
+
+# Install wheel requirements
 
 #TODO
 

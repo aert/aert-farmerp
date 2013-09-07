@@ -6,5 +6,5 @@
 
   roles:
     - common
-    - nginx
+    - web-app
 
