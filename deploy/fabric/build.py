@@ -20,7 +20,7 @@ WHEEL_NAME = "{}_wheel-reqs.tar.gz".format(PROJECT_NAME)
 
 # Other
 SETTINGS_FORMAT = 'aert_bookkeeping_site.settings.{}'
-REQUIRE_PATH_FMT = 'deployment/requirements/{}.txt'
+REQUIRE_PATH_FMT = 'deploy/requirements/{}.txt'
 
 
 def _md5_for_file(filename, block_size=2 ** 20):
