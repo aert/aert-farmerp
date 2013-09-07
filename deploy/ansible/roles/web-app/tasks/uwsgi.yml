@@ -26,7 +26,7 @@
 # Configure
 
 - name: uwsgi-config
-  copy: src=uwsgi.conf /etc/init/uwsgi.conf
+  template: src=uwsgi.conf.j2 dest=/etc/init/uwsgi.conf
   notify:
     - restart uwsgi
 
