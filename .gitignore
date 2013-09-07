@@ -8,8 +8,9 @@
 *.swp
 *~
 
-# Sphinx docs:
+# Build dirs
 /docs/build
+/build/*
 
 # SQLite3 database files:
 *.db
