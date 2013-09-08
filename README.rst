@@ -80,7 +80,7 @@ More Information
 ****************
  
 * GitHub : http://github.com/aert/aert-bookkeeping
-* Documentation : https://github.com/aert/aert-bookkeeping/wiki
+* Documentation : http://aert-bookkeeping.readthedocs.org
  
 License 
 *******
