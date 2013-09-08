@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'aert_bookkeeping'
-copyright = u'2013, ChangeMyName'
+copyright = u'2013, A.R'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -164,7 +164,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'aert_bookkeepingdoc'
+htmlhelp_basename = 'aert_bookkeeping'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -184,7 +184,7 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'aert_bookkeeping.tex', u'aert_bookkeeping Documentation',
-   u'ChangeToMyName', 'manual'),
+   u'A.R', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -214,7 +214,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'aert_bookkeeping', u'aert_bookkeeping Documentation',
-     [u'ChangeToMyName'], 1)
+     [u'A.R'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -228,7 +228,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'aert_bookkeeping', u'aert_bookkeeping Documentation',
-   u'ChangeToMyName', 'aert_bookkeeping', 'One line description of project.',
+   u'A.R', 'aert_bookkeeping', 'Agricultural Accounting Software.',
    'Miscellaneous'),
 ]
 
