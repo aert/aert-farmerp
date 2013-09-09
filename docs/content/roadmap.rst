@@ -2,21 +2,9 @@
 Roadmap
 *******
 
-Version 0.1
-===========
+.. toctree::
+   :maxdepth: 2
 
-In progress
------------
-
-Pending
--------
-
-Done
-----
-
-Postponed
----------
-
-Not started
------------
+   tasks/version-0.2
+   tasks/version-0.1
 
