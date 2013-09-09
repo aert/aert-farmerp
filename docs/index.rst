@@ -22,15 +22,22 @@ User Guide
    content/install
    content/tests
    content/roadmap
+
+Contributing
+************
+
+.. toctree::
+   :maxdepth: 2
+
    content/contributing
 
 
-Indices and tables
-******************
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+..  Indices and tables
+    ******************
+    
+    * :ref:`genindex`
+    * :ref:`modindex`
+    * :ref:`search`
 
 
 .. _`FAO guidelines`: http://www.fao.org/docrep/field/003/AB619F/AB619F00.htm
