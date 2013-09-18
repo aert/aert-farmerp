@@ -30,7 +30,7 @@ Context
 Global Use Cases
 ****************
 
-Stackholders
+Stakeholders
 ------------
 
 .. uml::
