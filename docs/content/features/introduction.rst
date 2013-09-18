@@ -9,11 +9,12 @@ Context
 
 .. uml::
 
-   Users -> (Farm ERP System) : Inventory data
-   Users -> (Farm ERP System) : Credit Book data
-   Users -> (Farm ERP System) : Cash Journal data
-   Users -> (Farm ERP System) : Users data
-   (Farm ERP System) -> Users : Feedbacks / Previsions / Reportings
+   left to right direction
+   Users --> (Farm ERP \nSystem) : Inventory data
+   Users --> (Farm ERP \nSystem) : Credit Book data
+   Users --> (Farm ERP \nSystem) : Cash Journal data
+   Users --> (Farm ERP \nSystem) : Users data
+   (Farm ERP \nSystem) ...> Users : Feedbacks \nPrevisions \nReportings
     
 
 Global Use Cases
@@ -29,8 +30,9 @@ Overview
 
    :Inventory Manager:
    :Accountant:
-   :Director:
-   :Admin:
+   :Director: -|> :Inventory Manager:
+   :Director: -|> :Accountant:
+   :Admin: -|> :Director:
 
 Description
 ~~~~~~~~~~~
