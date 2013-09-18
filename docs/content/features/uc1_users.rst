@@ -1,5 +1,5 @@
-Users Management
-================
+uc1: Manage users
+=================
 
 Administrate user permissions
 *****************************

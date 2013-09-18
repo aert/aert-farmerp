@@ -26,12 +26,12 @@ Features
 .. toctree::
    :maxdepth: 2
 
-   content/features/introduction
-   content/features/user_management
-   content/features/cash_journal
-   content/features/credit_book
-   content/features/inventory
-   content/features/security
+   content/features/overview.rst
+   content/features/uc1_users.rst
+   content/features/uc2_inventory.rst
+   content/features/uc3_credit_book.rst
+   content/features/uc4_cash_journal.rst
+   content/features/uc0_system_settings.rst
 
 
 Developers
