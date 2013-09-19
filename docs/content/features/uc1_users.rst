@@ -1,8 +1,82 @@
 uc1: Manage users
 =================
 
+.. uml::
+
+   left to right direction
+   actor Director
+   actor "All Users" as All
+
+
+   rectangle "Manage Users" {
+      (uc1.1: List users)  as (uc1.1)
+      (uc1.2: Add user)    as (uc1.2)
+      (uc1.3: Update user) as (uc1.3)
+      (uc1.4: Delete user) as (uc1.4)
+
+      Director -left-> (uc1.1)
+
+      (uc1.2) ..> (uc1.1) : extends
+      (uc1.3) ..> (uc1.1) : extends
+      (uc1.4) ..> (uc1.1) : extends
+
+      All      --right--> (uc1.3)
+   }
+   
+
+uc1.1: List users
+*****************
+
+**Preconditions:**
+
+#. User is authenticated
+
+**Post-conditions:**
+
+#. User list is displayed
+#. The ``Add user`` action is available
+#. An action list is available for each users displayed
+
+**Normal flow:**
+
+#. The user opens the users list view
+#. The system displays the users list.
+
+   For each row: 
+
+   **Data:**
+
+   * ``Name``
+   * ``Surname``
+   * ``Email``
+   * ``User Role`` : see :ref:`actors`
+
+   **Actions:**
+
+   * ``Edit``
+   * ``Delete``
+
+#. The system displays following global actions :
+
+   **Actions:**
+
+   * ``Add user``
+
+
+uc1.2: Add user
+*****************
+
+uc1.3: Update user
+******************
+
+uc1.4: Delete user
+******************
+
+Tests
+*****
+
 Administrate user permissions
-*****************************
+-----------------------------
 
 .. code-block:: gherkin
 
@@ -25,7 +99,7 @@ Administrate user permissions
                 And I should be allowed to "Update User"
 
 Grant User Access
-*****************
+-----------------
 
 .. code-block:: gherkin
 
@@ -45,7 +119,7 @@ Grant User Access
             Then I should see the login form
 
 Special Testing Account
-***********************
+-----------------------
 
 .. code-block:: gherkin
 

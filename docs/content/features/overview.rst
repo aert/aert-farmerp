@@ -30,6 +30,8 @@ Context
 Global Use Cases
 ****************
 
+.. _actors:
+
 Stakeholders
 ------------
 
