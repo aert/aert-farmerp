@@ -49,7 +49,7 @@ Reference
 *********
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    content/changelog/index
 
