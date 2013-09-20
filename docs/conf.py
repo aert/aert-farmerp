@@ -177,16 +177,15 @@ latex_elements = {
 
 # The font size ('10pt', '11pt' or '12pt').
 #'pointsize': '10pt',
-'pointsize': '11pt',
 
 # Additional stuff for the LaTeX preamble.
-'preamble': r'\setcounter{tocdepth}{10}',
+'preamble': r'\setcounter{tocdepth}{2}',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'aert_bookkeeping.tex', u'Agricultural Accounting',
+  ('index', 'aert_bookkeeping.tex', u'Farm ERP',
    u'A.R', 'manual'),
 ]
 
