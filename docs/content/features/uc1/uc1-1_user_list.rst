@@ -36,10 +36,11 @@ Normal flow
 
    **Data:**     
 
-   * ``Name`` : *string(250)*
+   * ``Firstname`` : *string(250)*
    * ``Surname`` : *string(250)*
    * ``Email`` : *string(250)*
-   * ``User Role`` : *string(50)*, see :ref:`actors`
+   * ``User Roles`` : List of user roles, see :ref:`actors`
+   * ``Is Active`` : *Yes/No*
 
    **Actions:**
 
