@@ -19,7 +19,6 @@ Post-conditions
 
 1. New user is added
 2. System launches :ref:`uc1-1`
-3. The new user is visible on screen :ref:`uc1-1`
 
 Normal flow
 -----------
@@ -29,11 +28,11 @@ Normal flow
 
    **Data**
 
-   * ``Firstname`` : *string(250)*
-   * ``Surname`` : *string(250)*
-   * ``Email`` : *string(250)*
+   * ``Firstname`` : *string(250), mandatory*
+   * ``Surname`` : *string(250), mandatory*
+   * ``Email`` : *string(250), mandatory*
    * ``User Roles`` : List of user roles, see :ref:`actors`
-   * ``Is Active`` : *Yes/No*
+   * ``Is Active`` : *Yes/No, default=No*
 
    **Actions**
 
@@ -42,6 +41,10 @@ Normal flow
 
 3. The user clics on ``Save``
 4. The system adds the new user and launches :ref:`uc1-1` 
+5. The system displays the following flash message::
+
+    User {{ Email }} added successfully.
+
 
 
 Alternate flow
@@ -50,3 +53,8 @@ Alternate flow
 3a. The user clics on ``Cancel``
 
     1. The system cancels users's input and launches :ref:`uc1-1` 
+
+Requirements
+------------
+
+1. ``Email`` must be unique in database
