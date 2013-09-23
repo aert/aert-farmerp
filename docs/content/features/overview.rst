@@ -7,25 +7,7 @@ Overview
 Context
 *******
 
-.. uml::
-
-   left to right direction
-   [Android] << client >>
-   [Web Browser] as Browser << client >>
-   usecase System as "
-      <b>Farm ERP</b>\n<b>System</b>
-      ..
-      Inventory
-      Cash Journal
-      Credit Book
-      Users
-   "
-
-   Users   <--> Android
-   Users   <--> Browser 
-
-   Android <--> (System) 
-   Browser <--> (System)
+.. image:: /images/generated/features_overview_context.png
 
 Global Use Cases
 ****************
@@ -35,16 +17,7 @@ Global Use Cases
 Stakeholders
 ------------
 
-.. uml::
-
-   :Inventory Manager: as Inventory
-   :Accountant:
-   :Admin:
-   :Director:
-
-   Admin    -|>  Director
-   Director --|> Inventory
-   Director --|> Accountant
+.. image:: /images/generated/features_overview_stakeholders.png
 
 **Inventory Manager**
     Manages inventory.
@@ -61,26 +34,5 @@ Stakeholders
 Use Cases
 ---------
 
-.. uml::
-
-   :Inventory Manager: as Inventory
-   :Accountant:
-   :Admin:
-   :Director:
-   (uc0: Manage system settings) as (guc0)
-   (uc1: Manage users) as (guc1)
-   (uc2: Manage inventory) as (guc2)
-   (uc3: Manage credit book) as (guc3)
-   (uc4: Manage cash journal) as (guc4)
-
-   Admin    -|>  Director
-   Director --|> Inventory
-   Director --|> Accountant
-
-   Admin      -> (guc0)
-   Director   -> (guc1)
-   Inventory  -> (guc2)
-   Accountant --left--> (guc3)
-   Accountant --right--> (guc4)
-
+.. image:: /images/generated/features_overview_guc.png
 

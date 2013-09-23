@@ -1,28 +1,7 @@
 uc1: Manage users
 =================
 
-.. uml::
-
-   left to right direction
-   actor Director
-   actor "All Users" as All
-
-
-   rectangle "Manage Users" {
-      (uc1.1: List users)  as (uc1.1)
-      (uc1.2: Add user)    as (uc1.2)
-      (uc1.3: Edit user) as (uc1.3)
-      (uc1.4: Delete user) as (uc1.4)
-
-      Director -left-> (uc1.1)
-
-      (uc1.2) ..> (uc1.1) : extends
-      (uc1.3) ..> (uc1.1) : extends
-      (uc1.4) ..> (uc1.1) : extends
-
-      All      --right--> (uc1.3)
-   }
-   
+.. image:: /images/generated/uc1_users.png
 
 **Child use cases:**
 
