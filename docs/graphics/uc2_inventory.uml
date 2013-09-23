@@ -1,5 +1,4 @@
 
-.. image:: /images/generated/uc2_inventory.png
 @startuml uc2_inventory.png
 
    ' Manage inventory
