@@ -17,8 +17,8 @@ Quick Start
 .. toctree::
    :maxdepth: 2
 
-   content/quickstart/requirements
-   content/quickstart/install
+   quickstart/requirements
+   quickstart/install
 
 Features
 ********
@@ -26,12 +26,12 @@ Features
 .. toctree::
    :maxdepth: 2
 
-   content/features/overview.rst
-   content/features/uc1_users.rst
-   content/features/uc2_inventory.rst
-   content/features/uc3_credit_book.rst
-   content/features/uc4_cash_journal.rst
-   content/features/uc0_system_settings.rst
+   features/overview.rst
+   features/uc1_users.rst
+   features/uc2_inventory.rst
+   features/uc3_credit_book.rst
+   features/uc4_cash_journal.rst
+   features/uc0_system_settings.rst
 
 
 Developers
@@ -40,9 +40,9 @@ Developers
 .. toctree::
    :maxdepth: 2
 
-   content/developer/contributing
-   content/developer/tests
-   content/api/index
+   developer/contributing
+   developer/tests
+   api/index
 
 
 Reference
@@ -51,7 +51,7 @@ Reference
 .. toctree::
    :maxdepth: 2
 
-   content/changelog/index
+   changelog/index
 
 Screenshots
 ***********
