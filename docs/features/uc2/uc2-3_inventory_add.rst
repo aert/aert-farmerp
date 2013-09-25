@@ -1,7 +1,7 @@
 
-.. _uc2-2:
+.. _uc2-3:
 
-uc1.2: Add inventory
+uc2.3: Add inventory
 ********************
 
 Actors
@@ -22,3 +22,4 @@ Alternate flow
 Requirements
 ------------
 
+See :ref:`uc2-reqs`

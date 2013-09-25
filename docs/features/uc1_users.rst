@@ -3,7 +3,6 @@ uc1: Manage users
 
 .. image:: /images/generated/uc1_users.png
 
-**Child use cases:**
 
 .. toctree::
    :maxdepth: 1

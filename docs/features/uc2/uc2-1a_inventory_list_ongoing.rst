@@ -1,12 +1,13 @@
 
-.. _uc2-1:
+.. _uc2-1a:
 
-uc2.1: List Inventories
-***********************
+uc2.1a: List ongoing inventories
+********************************
 
 Actors
 ------
 
+* All authenticated users
 * Inventory Manager
 
 Preconditions
@@ -17,13 +18,11 @@ Preconditions
 Post-conditions
 ---------------
 
-#. All available inventories are displayed
-#. Contextual and global actions are displayed
+#. All ongoing inventories are displayed
 
 Normal flow
 -----------
 
-1. The system displays available inventories
 
 Alternate flow
 --------------

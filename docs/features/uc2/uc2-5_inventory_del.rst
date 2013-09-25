@@ -1,7 +1,7 @@
 
-.. _uc2-4:
+.. _uc2-5:
 
-uc1.4: Delete user
+uc2.5: Delete user
 ******************
 
 Actors
@@ -19,3 +19,7 @@ Normal flow
 Alternate flow
 --------------
 
+Requirements
+------------
+
+See :ref:`uc2-reqs`

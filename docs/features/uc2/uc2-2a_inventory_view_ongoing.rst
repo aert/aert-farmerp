@@ -1,14 +1,13 @@
 
-.. _uc2-0:
+.. _uc2-2a:
 
-uc2.0: View ongoing inventories
-*******************************
+uc2.2a: View ongoing inventory
+******************************
 
 Actors
 ------
 
 * All authenticated users
-* Inventory Manager
 
 Preconditions
 -------------
@@ -18,7 +17,7 @@ Preconditions
 Post-conditions
 ---------------
 
-#. All ongoing inventories are displayed
+#. Inventory data are displayed
 
 Normal flow
 -----------
@@ -31,4 +30,4 @@ Alternate flow
 Requirements
 ------------
 
-#. Only ``Inventory Manager`` can modify content of inventories
+See :ref:`uc2-reqs`

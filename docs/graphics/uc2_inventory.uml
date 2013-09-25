@@ -10,19 +10,27 @@
 
 
    rectangle "Manage Inventory" {
-      (uc2.0: View ongoing inventories)  as (uc2.0)
       (uc2.1: List inventories)  as (uc2.1)
-      (uc2.2: Add inventory)    as (uc2.2)
-      (uc2.3: Edit inventory) as (uc2.3)
-      (uc2.4: Delete inventory) as (uc2.4)
+      (uc2.1a: List ongoing\ninventories)  as (uc2.1a)
+      (uc2.2: View inventory)  as (uc2.2)
+      (uc2.2a: View ongoing\ninventory)  as (uc2.2a)
+      (uc2.3: Add inventory)    as (uc2.3)
+      (uc2.4: Edit inventory) as (uc2.4)
+      (uc2.5: Delete inventory) as (uc2.5)
 
-      Inventory --> (uc2.0)
+      (uc2.1) ..> (uc2.1a) : include
+      (uc2.2) ..> (uc2.2a) : include
+
       Inventory --> (uc2.1)
       Inventory --> (uc2.2)
       Inventory --> (uc2.3)
       Inventory --> (uc2.4)
+      Inventory --> (uc2.5)
 
-      User  -left-> (uc2.0)
+
+      User  -left-> (uc2.1a)
+      User  -left-> (uc2.2a)
+
 
    }
    

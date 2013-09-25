@@ -1,23 +1,33 @@
 
-.. _uc2-3:
+.. _uc2-2:
 
-uc1.3: Edit inventory
+uc2.2: View inventory
 *********************
 
 Actors
 ------
 
+* All authenticated users
+
 Preconditions
 -------------
+
+#. User is authenticated
 
 Post-conditions
 ---------------
 
+#. Inventory data are displayed
+
 Normal flow
 -----------
+
 
 Alternate flow
 --------------
 
+
 Requirements
 ------------
+
+See :ref:`uc2-reqs`
