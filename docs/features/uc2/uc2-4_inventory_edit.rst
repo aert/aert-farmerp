@@ -4,6 +4,8 @@
 uc2.4: Edit inventory
 *********************
 
+This use case allows inventory to be updated or deleted.
+
 Actors
 ------
 

@@ -4,6 +4,8 @@
 uc2.1a: List ongoing inventories
 ********************************
 
+See :ref:`uc2-1`.
+
 Actors
 ------
 

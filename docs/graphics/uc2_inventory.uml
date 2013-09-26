@@ -25,7 +25,8 @@
       Inventory --> (uc2.2)
       Inventory --> (uc2.3)
       Inventory --> (uc2.4)
-      Inventory --> (uc2.5)
+
+      (uc2.4) <.. (uc2.5) : extends
 
 
       User  -left-> (uc2.1a)
