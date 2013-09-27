@@ -25,26 +25,44 @@ Normal flow
 
 1. The system displays all available inventories :
 
-   **Data**
+   **Item Data**
 
    * ``Title`` : *string(250), mandatory*
    * ``Start Date`` : *date, mandatory*
    * ``End Date`` : *date*
    * ``Is Completed`` : *Yes/No*.
+   * ``Products Count`` : *computed*, number of products inventoried
 
-   **Actions**
+   **Item Actions**
 
    * ``View``
    * ``Edit``
 
+   **Global Actions**
+
+   * ``Add Inventory``
+
+2. End
+
 Alternate flow
 --------------
 
+2.a User clicks ``View``
+
+    1. The syste launches :ref:`uc2-2`
+
+2.b User clicks ``Edit``
+
+    1. The syste launches :ref:`uc2-4`
+
+2.b User clicks ``Add Inventory``
+
+    1. The syste launches :ref:`uc2-3`
 
 Requirements
 ------------
 
 #. If ``Is Completed`` value is ``No``, it's an ``ongoing`` inventory (see :ref:`uc2-1a`).
-#. Only ``Inventory Manager`` can launch ``Edit`` action.
+#. If user is not ``Inventory Manager`` the only action available is ``View``.
 
 See also :ref:`uc2-reqs`
