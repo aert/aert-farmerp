@@ -26,7 +26,7 @@ def init_env_vagrant():
 @task
 def run_tests():
     """ Run test suite. """
-    local('py.test sources')
+    local('nosetests .')
 
 
 @task
