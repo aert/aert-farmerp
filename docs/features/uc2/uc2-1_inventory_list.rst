@@ -36,7 +36,6 @@ Normal flow
    **Item Actions**
 
    * ``View``
-   * ``Edit``
 
    **Global Actions**
 
@@ -51,18 +50,14 @@ Alternate flow
 
     1. The syste launches :ref:`uc2-2`
 
-2.b User clicks ``Edit``
-
-    1. The syste launches :ref:`uc2-4`
-
 2.b User clicks ``Add Inventory``
 
-    1. The syste launches :ref:`uc2-3`
+    1. TODO
 
 Requirements
 ------------
 
-#. If ``Is Completed`` value is ``No``, it's an ``ongoing`` inventory (see :ref:`uc2-1a`).
+#. If ``Is Completed`` value is ``No``, it's an ``ongoing`` inventory.
 #. If user is not ``Inventory Manager`` the only action available is ``View``.
 
 See also :ref:`uc2-reqs`

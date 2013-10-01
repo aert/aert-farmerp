@@ -8,12 +8,8 @@ uc2: Manage inventory
    :maxdepth: 1
 
    uc2/uc2-1_inventory_list
-   uc2/uc2-1a_inventory_list_ongoing.rst
-   uc2/uc2-2_inventory_view.rst
-   uc2/uc2-2a_inventory_view_ongoing.rst
-   uc2/uc2-3_inventory_add.rst
-   uc2/uc2-5_inventory_del.rst
-   uc2/uc2-4_inventory_edit.rst
+   uc2/uc2-2_inventory_manage
+   uc2/uc2-3_inventory_manage_product
 
 .. _uc2-reqs:
 

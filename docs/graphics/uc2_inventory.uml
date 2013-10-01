@@ -1,37 +1,22 @@
 
 @startuml uc2_inventory.png
 
-   ' Manage inventory
-   ' ----------------
+   ' Manage inventories
+   ' ------------------
 
    left to right direction
-   actor "Inventory Manager" as Inventory
    actor "All Authenticated\nUser" as User
 
 
-   rectangle "Manage Inventory" {
+   rectangle "Manage inventories" {
       (uc2.1: List inventories)  as (uc2.1)
-      (uc2.1a: List ongoing\ninventories)  as (uc2.1a)
-      (uc2.2: View inventory)  as (uc2.2)
-      (uc2.2a: View ongoing\ninventory)  as (uc2.2a)
-      (uc2.3: Add inventory)    as (uc2.3)
-      (uc2.4: Edit inventory) as (uc2.4)
-      (uc2.5: Delete inventory) as (uc2.5)
+      (uc2.2: Manage inventory)  as (uc2.2) <<CRUD>>
+      (uc2.3: Manage\nproduct inventory) as (uc2.3)
 
-      (uc2.1) ..> (uc2.1a) : include
-      (uc2.2) ..> (uc2.2a) : include
+      (uc2.1) <.. (uc2.2) : extends
+      (uc2.2) <.. (uc2.3) : extends
 
-      Inventory --> (uc2.1)
-      Inventory --> (uc2.2)
-      Inventory --> (uc2.3)
-      Inventory --> (uc2.4)
-
-      (uc2.4) <.. (uc2.5) : extends
-
-
-      User  -left-> (uc2.1a)
-      User  -left-> (uc2.2a)
-
+      User --> (uc2.1)
 
    }
    
