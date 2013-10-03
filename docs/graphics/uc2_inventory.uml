@@ -4,21 +4,48 @@
    ' Manage inventories
    ' ------------------
 
-   left to right direction
+   'left to right direction
    actor "All Authenticated\nUser" as User
 
 
-   rectangle "Manage inventories" {
-      (uc2.1: List inventories)  as (uc2.1)
-      (uc2.2: Manage inventory)  as (uc2.2) <<CRUD>>
-      (uc2.3: Manage\nproduct inventory) as (uc2.3)
+   ' Inventories
+   (uc2.10: <b>List inventories</b>)   as (uc2.10)
+   (uc2.11: Add/Edit inventory) as (uc2.11)
+   (uc2.12: Delete inventory)   as (uc2.12)
+   (uc2.10) <.. (uc2.11) : extends
+   (uc2.10) <.. (uc2.12) : extends
 
-      (uc2.1) <.. (uc2.2) : extends
-      (uc2.2) <.. (uc2.3) : extends
+   ' Inventory Products
+   (uc2.30: <b>List products</b>\n<b>from inventory</b>)    as (uc2.30)
+   (uc2.31: Add/Edit product\nfrom inventory) as (uc2.31)
+   (uc2.32: Delete product\nfrom inventory)   as (uc2.32)
+   (uc2.30) <.. (uc2.31) : extends
+   (uc2.30) <.. (uc2.32) : extends
 
-      User --> (uc2.1)
+   ' Moves
+   (uc2.40: <b>List moves</b>\n<b>from product inventory</b>)     as (uc2.40)
+   (uc2.41: Add/Edit move\nfrom product inventory)  as (uc2.41)
+   (uc2.42: Delete move\nfrom product inventory) as (uc2.42)
+   (uc2.40) <.. (uc2.41) : extends
+   (uc2.40) <.. (uc2.42) : extends
 
-   }
+   ' Products
+   (uc2.20: <b>List products</b>)  as (uc2.20)
+   (uc2.21: Add/Edit product) as (uc2.21)
+   (uc2.22: Delete product)   as (uc2.22)
+   (uc2.20) <.. (uc2.21) : extends
+   (uc2.20) <.. (uc2.22) : extends
+
+   ' Associations
+   ' ------------
+
+   User --> (uc2.10)
+   User --> (uc2.30)
+   User --> (uc2.40)
+   User --> (uc2.20)
+
+   (uc2.11) <.. (uc2.30) : extends
+   (uc2.31) <.. (uc2.40) : extends
    
 
 @enduml
