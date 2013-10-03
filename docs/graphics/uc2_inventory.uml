@@ -5,7 +5,7 @@
    ' ------------------
 
    'left to right direction
-   actor "All Authenticated\nUser" as User
+   actor "User" as User
 
 
    ' Inventories

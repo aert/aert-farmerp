@@ -1,0 +1,11 @@
+
+@startuml uc3_credit_book.png
+
+   ' Manage credit book
+   ' ------------------
+
+   'left to right direction
+   actor "All Authenticated\nUser" as User
+
+
+@enduml
