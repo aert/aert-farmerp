@@ -1,7 +1,7 @@
 
-.. _uc2-3:
+.. _uc4-3:
 
-uc2.3: Manage product inventory
+uc4.3: Manage product inventory
 *******************************
 
 Actors
@@ -43,4 +43,4 @@ Alternate flow
 Requirements
 ------------
 
-See :ref:`uc2-reqs`
+See :ref:`uc4-reqs`

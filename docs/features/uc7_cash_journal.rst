@@ -1,4 +1,4 @@
 
-uc4: Manage cash journal
+uc7: Manage cash journal
 ========================
 

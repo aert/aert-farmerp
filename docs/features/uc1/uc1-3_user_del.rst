@@ -1,7 +1,7 @@
 
-.. _uc1-4:
+.. _uc1-3:
 
-uc1.4: Delete user
+uc1.3: Delete user
 ******************
 
 Actors

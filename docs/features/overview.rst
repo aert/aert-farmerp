@@ -31,8 +31,8 @@ Stakeholders
 **Admin**
     Same role as Director, plus can manage technical features.
 
-Use Cases
----------
+Global Use Cases
+----------------
 
 .. image:: /images/generated/features_overview_guc.png
 

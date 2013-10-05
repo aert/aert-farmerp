@@ -1,7 +1,7 @@
 
-.. _uc2-2:
+.. _uc4-2:
 
-uc2.2: Manage inventory
+uc4.2: Manage inventory
 ***********************
 
 Actors
@@ -41,9 +41,9 @@ Alternate flow
 
 2.a User clicks ``View Product Inventory``
 
-    1. The system launches :ref:`uc2-3`
+    1. The system launches :ref:`uc4-3`
 
 Requirements
 ------------
 
-See :ref:`uc2-reqs`
+See :ref:`uc4-reqs`

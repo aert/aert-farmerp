@@ -1,8 +1,8 @@
 
 .. _uc1-2:
 
-uc1.2: Add user
-*****************
+uc1.2: Add/Edit user
+********************
 
 Actors
 ------
@@ -17,13 +17,13 @@ Preconditions
 Post-conditions
 ---------------
 
-1. New user is added
+1. New user is added or existing user is updated
 2. System launches :ref:`uc1-1`
 
 Normal flow
 -----------
 
-1. User opens the ``Add user`` screen
+1. User opens the ``Add/Edit user`` screen
 2. The system show the new user input form :
 
    **Data**
@@ -40,12 +40,10 @@ Normal flow
    * ``Cancel``
 
 3. The user clics on ``Save``
-4. The system adds the new user and launches :ref:`uc1-1` 
+4. The system adds or updates user's data and launches :ref:`uc1-1`
 5. The system displays the following flash message::
 
-    User {{ Email }} added successfully.
-
-
+    User {{ Email }} added|updated successfully.
 
 Alternate flow
 --------------

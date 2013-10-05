@@ -8,9 +8,8 @@ uc1: Manage users
    :maxdepth: 1
 
    uc1/uc1-1_user_list
-   uc1/uc1-2_user_add
-   uc1/uc1-3_user_update
-   uc1/uc1.4_user_del
+   uc1/uc1-2_user_edit
+   uc1/uc1-3_user_del
 
 
 .. Tests

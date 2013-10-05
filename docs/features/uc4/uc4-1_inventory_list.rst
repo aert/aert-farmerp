@@ -1,7 +1,7 @@
 
-.. _uc2-1:
+.. _uc4-1:
 
-uc2.1: List Inventories
+uc4.1: List Inventories
 ***********************
 
 Actors
@@ -48,7 +48,7 @@ Alternate flow
 
 2.a User clicks ``View``
 
-    1. The syste launches :ref:`uc2-2`
+    1. The syste launches :ref:`uc4-2`
 
 2.b User clicks ``Add Inventory``
 
@@ -60,4 +60,4 @@ Requirements
 #. If ``Is Completed`` value is ``No``, it's an ``ongoing`` inventory.
 #. If user is not ``Inventory Manager`` the only action available is ``View``.
 
-See also :ref:`uc2-reqs`
+See also :ref:`uc4-reqs`

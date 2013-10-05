@@ -28,11 +28,13 @@ Features
 
    features/overview.rst
    features/uc1_users.rst
-   features/uc2_inventory.rst
-   features/uc3_credit_book.rst
-   features/uc4_cash_journal.rst
+   features/uc2_projects.rst
+   features/uc3_accounts.rst
+   features/uc4_inventory.rst
+   features/uc5_products.rst
+   features/uc6_credit_book.rst
+   features/uc7_cash_journal.rst
    features/uc0_system_settings.rst
-
 
 Developers
 **********

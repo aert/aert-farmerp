@@ -59,11 +59,11 @@ Alternate flow
 3a. The user clics on ``Edit``
 
     1. The user clicks on ``Edit``
-    2. The system launches :ref:`uc1-3`
+    2. The system launches :ref:`uc1-2`
 
 3b. The user clics on ``Delete``
 
     1. The user clicks on ``Delete``
-    2. The system launches :ref:`uc1-4`
+    2. The system launches :ref:`uc1-3`
 
 

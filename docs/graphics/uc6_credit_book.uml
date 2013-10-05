@@ -1,5 +1,5 @@
 
-@startuml uc3_credit_book.png
+@startuml uc6_credit_book.png
 
    ' Manage credit book
    ' ------------------
