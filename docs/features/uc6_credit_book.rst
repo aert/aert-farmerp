@@ -13,3 +13,5 @@ uc6: Manage credit book
 
 Requirements
 ************
+
+See :ref:`uc7-reqs`

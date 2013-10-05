@@ -36,3 +36,14 @@ Global Use Cases
 
 .. image:: /images/generated/features_overview_guc.png
 
+.. toctree::
+   :maxdepth: 1
+
+   uc1_users.rst
+   uc2_projects.rst
+   uc3_accounts.rst
+   uc4_inventory.rst
+   uc5_products.rst
+   uc6_credit_book.rst
+   uc7_cash_journal.rst
+   uc0_system_settings.rst

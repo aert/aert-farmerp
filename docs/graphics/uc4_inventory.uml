@@ -9,7 +9,7 @@
 
 
    ' Inventories
-   (uc4.10: <b>List inventories</b>)   as (uc4.10)
+   (uc4.10: <b>List inventories</b>)   as (uc4.10) << Project Item >>
    (uc4.11: Add/Edit inventory) as (uc4.11)
    (uc4.12: Delete inventory)   as (uc4.12)
    (uc4.10) <.. (uc4.11) : extends
@@ -18,7 +18,7 @@
    ' Inventory Products
    (uc4.30: <b>List products</b>\n<b>from inventory</b>)    as (uc4.30)
    (uc4.31: Add/Edit product\nfrom inventory) as (uc4.31)
-   (uc4.32: Delete product\nfrom inventory)   as (uc4.32)
+   (uc4.32: Remove product\nfrom inventory)   as (uc4.32)
    (uc4.30) <.. (uc4.31) : extends
    (uc4.30) <.. (uc4.32) : extends
 
