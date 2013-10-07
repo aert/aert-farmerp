@@ -1,7 +1,28 @@
 uc1: Manage users
 =================
 
-.. image:: /images/generated/uc1_users.png
+.. uml::
+
+   ' Manage users
+   ' ------------
+
+   actor "User" as User
+
+   (uc1.1: List users)    as (uc1.1)
+
+   ' Add/Edit user
+   (uc1.2: Add/Edit user) as (uc1.2)
+   (uc1.21: <b>Manage user rights</b>) as (uc1.21)
+   (uc1.2) <.. (uc1.21) : extends
+
+   (uc1.3: Delete user)   as (uc1.3)
+
+
+   (uc1.1) <.. (uc1.2) : extends
+   (uc1.1) <.. (uc1.3) : extends
+
+   User    -> (uc1.1)
+
 
 
 .. toctree::

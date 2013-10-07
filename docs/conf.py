@@ -25,7 +25,9 @@ import sys, os
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = []
+extensions = ['sphinxcontrib.plantuml']
+plantuml = '../bin/plantuml'
+plantuml_latex_output_format = "pdf"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -171,22 +173,20 @@ htmlhelp_basename = 'aert_bookkeeping'
 
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
-    'papersize': 'a4paper',
+    #'papersize': 'a4paper',
 
     # The font size ('10pt', '11pt' or '12pt').
     #'pointsize': '10pt',
 
     # Additional stuff for the LaTeX preamble.
-    'preamble': r'''
-        \setcounter{tocdepth}{2}
-    ''',
+    'preamble': r'''\setcounter{tocdepth}{2}''',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'aert_bookkeeping.tex', u'Farm ERP',
-   u'A.R', 'manual'),
+    ('index', 'aert_bookkeeping.tex', u'Farm ERP',
+     u'A.R', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -230,9 +230,9 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'aert_bookkeeping', u'aert_bookkeeping Documentation',
-   u'A.R', 'aert_bookkeeping', 'Agricultural Accounting Software.',
-   'Miscellaneous'),
+    ('index', 'aert_bookkeeping', u'aert_bookkeeping Documentation',
+     u'A.R', 'aert_bookkeeping', 'Agricultural Accounting Software.',
+     'Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.

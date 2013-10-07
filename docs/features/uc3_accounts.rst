@@ -2,4 +2,22 @@
 uc3: Manage accounts
 ====================
 
-.. image:: /images/generated/uc3_accounts.png
+.. uml::
+
+   ' Manage accounts
+   ' ---------------
+
+   actor "User" as User
+
+   (uc3.10: <b>List accounts</b>) as (uc3.10) << Project Item >>
+
+   ' Accounts
+   (uc3.11: Add/Edit account) as (uc3.11)
+   (uc3.12: Delete account)   as (uc3.12)
+   (uc3.10) <.. (uc3.11) : extends
+   (uc3.10) <.. (uc3.12) : extends
+
+   ' Associations
+   ' ------------
+
+   User     -> (uc3.10)

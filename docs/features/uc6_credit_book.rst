@@ -2,8 +2,27 @@
 uc6: Manage credit book
 =======================
 
-.. image:: /images/generated/uc6_credit_book.png
+.. uml::
 
+   ' Manage credit book
+   ' ------------------
+
+   'left to right direction
+   actor "User" as User
+
+   (uc6.10: <b>Edit credit book</b>) as (uc6.10) << Project Item >>\n<< Cash Journal Item >>
+   (uc6.20: <b>List transactions</b>) as (uc6.20)
+   (uc6.21: Add/Edit transaction) as (uc6.21)
+   (uc6.22: Delete transaction)   as (uc6.22)
+
+   (uc6.10) --> (uc6.20) : include
+   (uc6.20) <.. (uc6.21) : extends
+   (uc6.20) <.. (uc6.22) : extends
+
+   ' Associations
+   ' ------------
+
+   User     -> (uc6.10)
 
 .. toctree::
    :maxdepth: 1

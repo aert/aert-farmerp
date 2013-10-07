@@ -121,6 +121,6 @@ doctest:
 
 graphics:
 	rm -rf images/generated/*
-	plantuml -o ../images/generated graphics/*.uml
+	#plantuml -o ../images/generated graphics/*.uml
 	@echo
 	@echo "Graphics generated with success."
