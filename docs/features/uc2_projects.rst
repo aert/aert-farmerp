@@ -2,32 +2,4 @@
 uc2: Manage projects
 ====================
 
-.. uml::
-
-   ' Manage projects
-   ' ---------------
-
-   actor "User" as User
-
-   (uc2.10: <b>List projects</b>)    as (uc2.10)
-
-   ' Projects
-   (uc2.11: Add/Edit project) as (uc2.11)
-   (uc2.12: Delete project)   as (uc2.12)
-   (uc2.10) <.. (uc2.11) : extends
-   (uc2.10) <.. (uc2.12) : extends
-
-   ' Projects Users
-   (uc2.40: <b>List project users</b>) as (uc2.40)
-   (uc2.41: Add user\nto project)      as (uc2.41)
-   (uc2.42: Remove user\nfrom project) as (uc2.42)
-   (uc2.11) <.. (uc2.40) : extends
-   (uc2.40) <.. (uc2.41) : extends
-   (uc2.40) <.. (uc2.42) : extends
-   (uc2.12) --> (uc2.42) : include
-
-   ' Associations
-   ' ------------
-
-   User     -> (uc2.10)
-
+.. image:: /images/generated/uc2_projects.png

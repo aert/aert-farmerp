@@ -7,29 +7,7 @@ Overview
 Context
 *******
 
-.. uml::
-
-   ' Context
-   ' -------
-
-   left to right direction
-   [Android] << client >>
-   [Web Browser] as Browser << client >>
-   usecase System as "
-      <b>Farm ERP</b>\n<b>System</b>
-      ..
-      Inventory
-      Cash Journal
-      Credit Book
-      Users/Projects
-   "
-
-   Users   <--> Android
-   Users   <--> Browser
-
-   Android <--> (System)
-   Browser <--> (System)
-
+.. image:: /images/generated/features_overview_context.png
 
 Global Use Cases
 ****************
@@ -39,20 +17,7 @@ Global Use Cases
 Stakeholders
 ------------
 
-.. uml::
-
-   ' Stakeholders
-   ' ------------
-
-   :Inventory Manager: as Inventory
-   :Accountant:
-   :Admin:
-   :Director:
-
-   Admin     -|> Director
-   Director --|> Inventory
-   Director --|> Accountant
-
+.. image:: /images/generated/features_overview_stakeholders.png
 
 **Inventory Manager**
     Manages inventory.
@@ -69,35 +34,16 @@ Stakeholders
 Global Use Cases
 ----------------
 
-.. uml::
+.. image:: /images/generated/features_overview_guc.png
 
-   ' Global Use Cases
-   ' ----------------
+.. toctree::
+   :maxdepth: 1
 
-   left to right direction
-   :Inventory Manager: as Inventory
-   :Accountant:
-   ':Admin:
-   :Director:
-   (uc1: Manage users)           as (guc1)
-   (uc2: Manage projects)        as (guc2)
-   (uc3: Manage accounts)        as (guc3)
-   (uc4: Manage inventory)       as (guc4)
-   (uc5: Manage products)        as (guc5)
-   (uc6: Manage credit book)     as (guc6)
-   (uc7: Manage cash journal)    as (guc7)
-   '(uc0: Manage system settings) as (guc0)
-
-   Director --|> Inventory
-   Director --|> Accountant
-   'Admin     -|> Director
-
-   Director           -> (guc1)
-   Director           -> (guc2)
-   Director           -> (guc3)
-   Inventory         --> (guc4)
-   Inventory          -> (guc5)
-   Accountant        --> (guc6)
-   Accountant         -> (guc7)
-   'Admin              -> (guc0)
-
+   uc1_users.rst
+   uc2_projects.rst
+   uc3_accounts.rst
+   uc4_inventory.rst
+   uc5_products.rst
+   uc6_credit_book.rst
+   uc7_cash_journal.rst
+   uc0_system_settings.rst

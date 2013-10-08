@@ -1,0 +1,28 @@
+
+@startuml uc7_cash_journal.png
+
+   ' Manage cash journal
+   ' -------------------
+
+   'left to right direction
+   actor "User" as User
+
+   (uc7.10: <b>List cash journals</b>) as (uc7.10) << Project Item >>
+   (uc7.11: Add/Edit cash journal) as (uc7.11)
+   (uc7.12: Delete cash journal)   as (uc7.12)
+   (uc7.20: <b>List transactions</b>) as (uc7.20)
+   (uc7.21: Add/Edit transaction) as (uc7.21)
+   (uc7.22: Delete transaction)   as (uc7.22)
+
+   (uc7.10) <.. (uc7.11) : extends
+   (uc7.10) <.. (uc7.12) : extends
+   (uc7.11) --> (uc7.20) : include
+   (uc7.20) <.. (uc7.21) : extends
+   (uc7.20) <.. (uc7.22) : extends
+
+   ' Associations
+   ' ------------
+
+   User     -> (uc7.10)
+
+@enduml
