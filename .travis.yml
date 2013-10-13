@@ -3,6 +3,6 @@ python:
     - "2.7"
 script: fab run_tests
 install:
-    - pip install -r deploy/requirements/test.txt
+    - python setup.py dev
 notifications:
     email: false

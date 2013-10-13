@@ -1,8 +1,8 @@
 Farm ERP
 ''''''''
 
-.. image:: https://travis-ci.org/aert/aert-bookkeeping.png?branch=master
-        :target: https://travis-ci.org/aert/aert-bookkeeping
+.. image:: https://travis-ci.org/aert/farmerp.png?branch=master
+        :target: https://travis-ci.org/aert/farmerp
 
 **Warning:** This project is currently in an **alpha** state and currently not meant for real projects.
 
@@ -27,6 +27,7 @@ Dependencies
 * Debian 7 (or Ubuntu >= 12.04)
 * Python 2.7
 * Vagrant *(Optional, to test staging env)*
+* Ansible *(Optional, to test staging env)*
 * sshpass *(Optional, to setup Vagrant VM)*
 
 
@@ -79,8 +80,8 @@ Testing
 More Information 
 ****************
  
-* GitHub : http://github.com/aert/aert-bookkeeping
-* Documentation : http://aert-bookkeeping.readthedocs.org
+* GitHub : http://github.com/aert/aert-farmerp
+* Documentation : http://farmerp.readthedocs.org
  
 License 
 *******
@@ -90,8 +91,8 @@ This project is licensed under the MIT license.
 Support 
 *******
  
-* Issue Tracking : https://github.com/aert/aert-bookkeeping/issues
-* Pull Request : https://github.com/aert/aert-bookkeeping/pulls
+* Issue Tracking : https://github.com/aert/aert-farmerp/issues
+* Pull Request : https://github.com/aert/aert-farmerp/pulls
 
 Those who wish to contribute directly to the project can contact me at dev.aert@gmail.com to talk about getting repository access granted.
 
