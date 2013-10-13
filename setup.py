@@ -10,10 +10,9 @@ with open(os.path.join(here, 'CHANGES.rst')) as f:
 
 requires_base = [
     'bpython==0.12',
-    'Django==1.5.2',
+    'Django==1.5.4',
     'django-braces==1.2.2',
     'django-model-utils==1.5.0',
-    'logutils==0.3.3',
     'South==0.8.2',
     'psycopg2==2.5.1',
     'django-compressor==1.3',
@@ -21,15 +20,15 @@ requires_base = [
 ]
 
 requires_dev = [
-    'Fabric==1.7.0',
+    'Fabric==1.8.0',
     'fabtools==0.15.0',
     'django-debug-toolbar==0.9.4',
     # Build tools
-    'wheel==0.21.0',
+    'wheel==0.22.0',
     'pip-tools==0.3.4',
     'flake8==2.0',
     # Deploy tools
-    'ansible==1.2.3',
+    'ansible==1.3.3',
 ]
 
 extras_requires = {
