@@ -9,7 +9,6 @@ with open(os.path.join(here, 'CHANGES.rst')) as f:
     CHANGES = f.read()
 
 requires_base = [
-    'bpython==0.12',
     'Django==1.5.4',
     'django-braces==1.2.2',
     'django-model-utils==1.5.0',
@@ -20,6 +19,7 @@ requires_base = [
 ]
 
 requires_dev = [
+    'bpython',
     'Fabric==1.8.0',
     'fabtools==0.15.0',
     'django-debug-toolbar==0.9.4',
