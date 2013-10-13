@@ -28,7 +28,7 @@ requires_dev = [
     'pip-tools==0.3.4',
     'flake8==2.0',
     # Deploy tools
-    'ansible==1.3.3',
+    #'ansible==1.3.3',
 ]
 
 extras_requires = {
