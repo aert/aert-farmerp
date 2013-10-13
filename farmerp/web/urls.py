@@ -7,7 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
                        # Apps
-                       url(r'^', include('aert_bookkeeping.urls')),
+                       url(r'^', include('core.urls')),
                        # url(r'^admin/doc/',
                        #     include('django.contrib.admindocs.urls')),
                        # Admin

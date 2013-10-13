@@ -5,7 +5,7 @@ from django.contrib import admin
 
 admin.autodiscover()
 
-urlpatterns = patterns('aert_bookkeeping.views',
+urlpatterns = patterns('core.views',
                        #url(r'^$', 'home', name='home'),
                        url(r'^$',
                            TemplateView.as_view(template_name='base.html'),

@@ -4,13 +4,13 @@ from django import template
 register = template.Library()
 
 
-@register.inclusion_tag('aert_bookkeeping/tags/render_menu.html')
+@register.inclusion_tag('core/tags/render_menu.html')
 def render_menu(menu, project=None):
     #return MenuManager().render_menu(menu, project)
     return {"menu":  menu, "project": project}
 
 
-@register.inclusion_tag('aert_bookkeeping/tags/render_main_menu.html')
+@register.inclusion_tag('core/tags/render_main_menu.html')
 def render_main_menu(project=None):
     return {"project": project}
 

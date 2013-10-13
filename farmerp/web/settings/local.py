@@ -28,7 +28,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'aert_bookkeeping',
+        'NAME': 'core',
         'USER': 'bookkeeping',
         'PASSWORD': 'bookkeepingPwd3',
         'HOST': '127.0.0.1',

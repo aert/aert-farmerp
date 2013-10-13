@@ -1,5 +1,5 @@
-aert-bookkeeping
-''''''''''''''''
+Farm ERP
+''''''''
 
 .. image:: https://travis-ci.org/aert/aert-bookkeeping.png?branch=master
         :target: https://travis-ci.org/aert/aert-bookkeeping
