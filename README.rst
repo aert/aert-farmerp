@@ -1,8 +1,8 @@
 Farm ERP
 ''''''''
 
-.. image:: https://travis-ci.org/aert/farmerp.png?branch=master
-        :target: https://travis-ci.org/aert/farmerp
+.. image:: https://travis-ci.org/aert/aert-farmerp.png?branch=master
+        :target: https://travis-ci.org/aert/aert-farmerp
 
 **Warning:** This project is currently in an **alpha** state and currently not meant for real projects.
 
