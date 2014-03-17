@@ -81,7 +81,7 @@ More Information
 ****************
  
 * GitHub : http://github.com/aert/aert-farmerp
-* Documentation : http://farmerp.readthedocs.org
+* Documentation : http://aert-bookkeeping.readthedocs.org
  
 License 
 *******
